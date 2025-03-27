@@ -1,0 +1,813 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/VLSM/VLSM.html">
+      
+      
+        <link rel="prev" href="../index.html">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>VLSM - Práctico de Redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vlsm" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Práctico de Redes" class="md-header__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Práctico de Redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VLSM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Práctico de Redes" class="md-nav__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Práctico de Redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VLSM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="VLSM.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    VLSM
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pasos-para-distribuir-subredes-con-vlsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos para Distribuir Subredes con VLSM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pasos para Distribuir Subredes con VLSM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-practico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo Práctico
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requerimientos-de-la-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requerimientos de la red:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resolución
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-determinar-el-tamano-de-cada-subred" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Determinar el tamaño de cada subred
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-asignacion-de-subredes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Asignación de subredes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-calculo-de-eficiencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Cálculo de eficiencia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vlsm">VLSM<a class="headerlink" href="#vlsm" title="Permanent link">&para;</a></h1>
+<p>La técnica de <strong>VLSM (Variable Length Subnet Mask)</strong> permite dividir una red en subredes de diferentes tamaños, optimizando el uso de direcciones IP.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En los ejercicios, se usará el criterio <strong>RFC 1878</strong> <a href="https://librosnetworking.blogspot.com/2013/08/la-subred-cero-subnet-zero.html">La subred cero</a>. Es decir, se permite zero-subnet (Subred #1 con todos los bits de red a cero) y all-ones-subnet (última subred con todos los bits de red a 1). Además usaremos la notación CIDR.</p>
+</div>
+<h2 id="pasos-para-distribuir-subredes-con-vlsm">Pasos para Distribuir Subredes con VLSM<a class="headerlink" href="#pasos-para-distribuir-subredes-con-vlsm" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Identificar las Necesidades de Hosts</strong>:
+   - Haz una lista de todas las subredes que necesitas y el número de hosts requeridos para cada una.</p>
+</li>
+<li>
+<p><strong>Ordenar las Subredes</strong>:
+   - Ordena las subredes en orden descendente según el número de hosts necesarios. Esto asegura que las subredes más grandes se asignen primero, evitando fragmentación. Aunque si que vamos a tener en cuenta posibilidad de crecimiento en ciertas subredes.</p>
+</li>
+<li>
+<p><strong>Calcular la Máscara de Subred</strong>:
+   - Para cada subred, calcula la máscara de subred necesaria usando la fórmula:</p>
+</li>
+</ol>
+<p><span class="arithmatex">\(2^h - 2 \geq \text{número de hosts}\)</span> donde <span class="arithmatex">\( h \)</span> es el número de bits de host.</p>
+<ol start="4">
+<li>
+<p><strong>Asignar Direcciones IP</strong>:
+   - Comienza con la primera subred y asigna el rango de direcciones IP adecuado. Luego, ajusta la máscara de subred y repite el proceso para las siguientes subredes.</p>
+</li>
+<li>
+<p><strong>Actualizar la Tabla de Subredes</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>Mantén una tabla con la siguiente información para cada subred:<ul>
+<li>Número de subred</li>
+<li>Hosts requeridos</li>
+<li>Hosts disponibles</li>
+<li>Dirección de red</li>
+<li>Máscara de subred</li>
+<li>Primera IP utilizable</li>
+<li>Última IP utilizable</li>
+<li>Dirección de broadcast</li>
+</ul>
+</li>
+</ul>
+<h3 id="ejemplo-practico">Ejemplo Práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">&para;</a></h3>
+<p>Supongamos que tienes una red 192.168.1.0/24 y necesitas crear subredes para los siguientes departamentos:</p>
+<ul>
+<li>Departamento A: 50 hosts</li>
+<li>Departamento B: 20 hosts</li>
+<li>Departamento C: 10 hosts</li>
+</ul>
+<ol>
+<li><strong>Ordenar Subredes</strong>:</li>
+</ol>
+<ul>
+<li>Departamento A: 50 hosts</li>
+<li>Departamento B: 20 hosts</li>
+<li>Departamento C: 10 hosts</li>
+</ul>
+<ol start="2">
+<li><strong>Calcular Máscaras de Subred</strong>:</li>
+</ol>
+<ul>
+<li>Departamento A: Necesita al menos 50 hosts, por lo que la máscara será /26 (64 direcciones, 62 hosts utilizables).</li>
+<li>Departamento B: Necesita al menos 20 hosts, por lo que la máscara será /27 (32 direcciones, 30 hosts utilizables).</li>
+<li>Departamento C: Necesita al menos 10 hosts, por lo que la máscara será /28 (16 direcciones, 14 hosts utilizables).</li>
+</ul>
+<pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#34cceb', 'pie2': '#FFFF00', 'pie3': '#00ff9d', 'pie4': '#0000FF', 'pie5': '#800080', 'pie6': '#ff0000', 'pie7': '#FFA500'}, 'pie': {'startAngle': 0}}}%%
+pie
+    title Distribución de subredes del /24
+    "/26" : 25
+    "/27" : 12
+    "/28" : 8
+    "/28 vacio" : 8
+    "/28 vacio1" : 6
+    "/28 vacio2" : 6
+    "/28 vacio3" : 6
+    "/28 vacio4" : 6
+    "/28 vacio5" : 6
+    "/28 vacio6" : 6
+    "/28 vacio7" : 6
+    "/28 vacio8" : 5
+
+</code></pre>
+<p>Solo se asignan las 3 primeras subredes el resto </p>
+<ol start="3">
+<li><strong>Asignar Direcciones IP</strong>:</li>
+</ol>
+<ul>
+<li>Departamento A: 192.168.1.0/26 (Rango: 192.168.1.1 - 192.168.1.62)</li>
+<li>Departamento B: 192.168.1.64/27 (Rango: 192.168.1.65 - 192.168.1.94)</li>
+<li>Departamento C: 192.168.1.96/28 (Rango: 192.168.1.97 - 192.168.1.110)</li>
+</ul>
+<h2 id="ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans">Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs<a class="headerlink" href="#ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" title="Permanent link">&para;</a></h2>
+<p>Una institución educativa ha adquirido el bloque de direcciones <code>172.16.0.0/22</code> y necesita dividirlo en subredes eficientes usando VLSM. </p>
+<!-- Además, cada subred representará una VLAN en la red, asegurando segmentación y control de tráfico. -->
+
+<h3 id="requerimientos-de-la-red">Requerimientos de la red:<a class="headerlink" href="#requerimientos-de-la-red" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Departamento de Informática</strong>: 110 hosts</li>
+<li><strong>Departamento de Administración</strong>: 50 hosts</li>
+<li><strong>Departamento de Profesorado</strong>: 30 hosts</li>
+<li><strong>Zona de Aulas (Red WiFi para alumnos)</strong>: 250 hosts</li>
+<li><strong>Conexión entre switches de core y distribución</strong>: 3 enlaces punto a punto (cada uno requiere 2 direcciones IP)</li>
+</ol>
+<hr />
+<h2 id="resolucion">Resolución<a class="headerlink" href="#resolucion" title="Permanent link">&para;</a></h2>
+<h3 id="paso-1-determinar-el-tamano-de-cada-subred">Paso 1: Determinar el tamaño de cada subred<a class="headerlink" href="#paso-1-determinar-el-tamano-de-cada-subred" title="Permanent link">&para;</a></h3>
+<p>Usamos VLSM para asignar direcciones de manera eficiente. Recordemos que una subred necesita al menos <code>hosts + 2</code> direcciones (una para la dirección de red y otra para el broadcast).</p>
+<ul>
+<li><strong>Zona de Aulas WIFI</strong>: 250 hosts → <strong>2^8 = 256</strong> direcciones (/24)</li>
+<li><strong>Departamento de Informática</strong>: 110 hosts → <strong>2^7 = 128</strong> direcciones (/25)</li>
+<li><strong>Departamento de Administración</strong>: 50 hosts → <strong>2^6 = 64</strong> direcciones (/26)</li>
+<li><strong>Departamento de Profesorado</strong>: 30 hosts → <strong>2^6 = 64</strong> direcciones (/26)</li>
+<li><strong>Enlaces punto a punto</strong>: 3 enlaces, cada uno requiere 2 IPs → <strong>2^2 = 4</strong> direcciones por enlace (/30)</li>
+</ul>
+<h3 id="paso-2-asignacion-de-subredes">Paso 2: Asignación de subredes<a class="headerlink" href="#paso-2-asignacion-de-subredes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Departamento</th>
+<th>Subred</th>
+<th>Rango de Hosts</th>
+<th>Broadcast</th>
+<th>CIDR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wifi (Zona de Aulas)</td>
+<td><code>172.16.0.0/24</code></td>
+<td><code>172.16.0.1 - 172.16.0.254</code></td>
+<td><code>172.16.0.255</code></td>
+<td>/24</td>
+</tr>
+<tr>
+<td>Informática</td>
+<td><code>172.16.1.0/25</code></td>
+<td><code>172.16.0.1 - 172.16.1.126</code></td>
+<td><code>172.16.0.127</code></td>
+<td>/25</td>
+</tr>
+<tr>
+<td>Reserva</td>
+<td><code>172.16.1.128/25</code></td>
+<td><code>172.16.1.129 - 172.16.1.254</code></td>
+<td><code>172.16.1.255</code></td>
+<td>/25</td>
+</tr>
+<tr>
+<td>Administración</td>
+<td><code>172.16.2.0/26</code></td>
+<td><code>172.16.2.1 - 172.16.2.62</code></td>
+<td><code>172.16.2.63</code></td>
+<td>/26</td>
+</tr>
+<tr>
+<td>Reserva</td>
+<td><code>172.16.2.64/26</code></td>
+<td><code>172.16.2.65 - 172.16.2.126</code></td>
+<td><code>172.16.2.127</code></td>
+<td>/26</td>
+</tr>
+<tr>
+<td>Profesorado</td>
+<td><code>172.16.2.128/25</code></td>
+<td><code>172.16.2.129 - 172.16.2.190</code></td>
+<td><code>172.16.2.191</code></td>
+<td>/26</td>
+</tr>
+<tr>
+<td>Reserva</td>
+<td><code>172.16.2.192/26</code></td>
+<td><code>172.16.2.193 - 172.16.2.254</code></td>
+<td><code>172.16.2.255</code></td>
+<td>/26</td>
+</tr>
+<tr>
+<td>Enlace 1</td>
+<td><code>172.16.3.0/30</code></td>
+<td><code>172.16.3.1 - 172.16.3.2</code></td>
+<td><code>172.16.3.3</code></td>
+<td>/30</td>
+</tr>
+<tr>
+<td>Enlace 2</td>
+<td><code>172.16.3.4/30</code></td>
+<td><code>172.16.3.5 - 172.16.3.6</code></td>
+<td><code>172.16.3.7</code></td>
+<td>/30</td>
+</tr>
+<tr>
+<td>Enlace 3</td>
+<td><code>172.16.3.8/30</code></td>
+<td><code>172.16.3.9 - 172.16.3.10</code></td>
+<td><code>172.16.3.11</code></td>
+<td>/30</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#34cceb', 'pie2': '#FFFF00', 'pie3': '#00ff9d', 'pie4': '#0000FF', 'pie5': '#800080', 'pie6': '#ff0000', 'pie7': '#FFA500'}, 'pie': {'startAngle': 0}}}%%
+pie
+    title Distribución de subredes del /22
+    "/24 WIFI" : 24
+    "/25 INF" : 12
+    "/25 Reserva" : 12
+    "/26 Admin" : 4
+    "/26 Reserva" : 4
+    "/26 Prof" : 4
+    "/26 Reserva" : 4
+    "/26 Resto1" : 4
+    "/26 Resto2" : 4
+    "/26 Resto3" : 4
+    "/26 Resto4" : 4
+</code></pre>
+<h3 id="paso-3-calculo-de-eficiencia">Paso 3: Cálculo de eficiencia<a class="headerlink" href="#paso-3-calculo-de-eficiencia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Total de direcciones disponibles</strong>: 1024 (<code>/22</code> = <code>2^10</code>)</li>
+<li><strong>Total de direcciones usadas</strong>: 640</li>
+<li><strong>Porcentaje de uso</strong>: <code>(640 / 1024) * 100 = 62.5%</code></li>
+<li><strong>Direcciones desperdiciadas</strong>: <code>1024 - 640 = 384</code></li>
+</ul>
+<!-- ### Paso 4: Asignación de VLANs y seguridad
+Cada subred se asigna a una VLAN específica para segmentar el tráfico y mejorar la seguridad:
+
+| Departamento | VLAN ID |
+|-------------|--------|
+| Informática | 10 |
+| Administración | 20 |
+| Profesorado | 30 |
+| Zona de Aulas | 40 |
+| Enlaces punto a punto | 99 (nativa) |
+
+--- -->
+
+<!-- ## Elección de los VLAN ID
+
+La elección de los VLAN ID (10, 20, 30, 40, etc.) sigue un criterio lógico y estructurado basado en buenas prácticas de administración de redes. Aquí está la justificación detallada:
+
+1. **Evitar VLANs Reservadas o Especiales**
+
+Algunos VLAN IDs tienen usos específicos en muchos dispositivos de red:
+
+- VLAN 1 → VLAN por defecto en la mayoría de los switches, no recomendable para uso normal.
+- VLANs 1002-1005 → Reservadas para FDDI y Token Ring en switches Cisco.
+- VLANs 0 y 4095 → Reservadas y no utilizables.
+
+Por esta razón, elegimos valores personalizados y organizados dentro de un rango adecuado.
+
+
+2. **Organización y Escalabilidad**
+
+Usamos números redondos y consecutivos (10, 20, 30…) para mantener un orden claro y escalable.
+
+- Esto facilita la comprensión y el mantenimiento.
+- Si en el futuro se agregan más VLANs, pueden seguir la misma lógica (ejemplo: VLAN 50 para un nuevo departamento).
+
+
+3. **Separación Lógica por Rango de VLANs**
+
+Asignamos números dentro de un rango predefinido según el tipo de uso:
+
+- VLANs 10-99: Usuarios y departamentos.
+- VLANs 100-199: Infraestructura, enlaces troncales, servidores.
+- VLANs 200-299: Enlaces punto a punto entre switches.
+
+
+### Conclusiones
+
+- Se ha realizado una asignación eficiente de subredes usando VLSM.
+- Se ha optimizado el uso de direcciones, alcanzando una eficiencia del 62.5%.
+- Se han asignado VLANs adecuadas para segmentar la red y mejorar la seguridad.
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2024-2025 Francisco Javier Hernández Illán - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<fj.hernandez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/fjavier-hernandez-illan" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookie</h4>
+<p>Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes. Con tu consentimiento, me ayudas a mejorar estos materiales.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
