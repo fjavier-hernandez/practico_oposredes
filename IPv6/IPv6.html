@@ -1,0 +1,1080 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/IPv6/IPv6.html">
+      
+      
+        <link rel="prev" href="../VLSM/VLSM.html">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>IPv6 - Práctico de Redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ipv6" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Práctico de Redes" class="md-header__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Práctico de Redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IPv6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Práctico de Redes" class="md-nav__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Práctico de Redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VLSM/VLSM.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VLSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    IPv6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="IPv6.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    IPv6
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6-caracteristicas-y-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPv6: Características y Funcionamiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-direcciones-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de direcciones IPv6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subnetting-en-ipv6-conceptos-claves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subnetting en IPv6: Conceptos Claves
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subnetting en IPv6: Conceptos Claves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-general-de-una-direccion-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura General de una Dirección IPv6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamanos-de-prefijo-comunes-en-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tamaños de prefijo comunes en IPv6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-dividir-un-prefijo-48-en-subredes-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: Dividir un prefijo /48 en subredes /64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-resuelto-subnetting-ipv6-con-vlsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio Resuelto: Subnetting IPv6 con VLSM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ipv6">IPv6<a class="headerlink" href="#ipv6" title="Permanent link">&para;</a></h1>
+<p>IPv6 es la evolución del protocolo IPv4 y se diseñó para solventar sus limitaciones, especialmente la escasez de direcciones. </p>
+<h2 id="ipv6-caracteristicas-y-funcionamiento">IPv6: Características y Funcionamiento<a class="headerlink" href="#ipv6-caracteristicas-y-funcionamiento" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Direcciones de 128 bits</strong>: Permite una cantidad casi ilimitada de direcciones IP (3.4×10³⁸ direcciones)</li>
+<li><strong>Formato hexadecimal</strong>: 8 grupos de 16 bits separados por <code>:</code> (ej: <code>2001:0db8:85a3:08d3:1319:8a2e:0370:7334</code>)</li>
+<li><strong>Autoconfiguración (SLAAC)</strong>: Asignación automática sin servidor DHCP</li>
+<li><strong>Encabezado simplificado</strong>: 9 campos frente a 13 de IPv4, mejor eficiencia</li>
+<li><strong>Seguridad integrada</strong>: IPSec obligatorio para cifrado y autenticación</li>
+<li><strong>Mejor QoS</strong>: Etiquetas de flujo para priorización</li>
+<li><strong>Sin NAT</strong>: Cada dispositivo puede tener dirección pública</li>
+</ul>
+<h2 id="tipos-de-direcciones-ipv6">Tipos de direcciones IPv6<a class="headerlink" href="#tipos-de-direcciones-ipv6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Prefijo</th>
+<th>Equivalente IPv4</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unicast Global</td>
+<td>2000::/3</td>
+<td>Públicas</td>
+<td>Internet global</td>
+</tr>
+<tr>
+<td>Unicast Link-Local</td>
+<td>FE80::/10</td>
+<td>APIPA</td>
+<td>Comunicación en red local</td>
+</tr>
+<tr>
+<td>Unicast Unique Local</td>
+<td>FC00::/7</td>
+<td>Privadas</td>
+<td>Redes internas</td>
+</tr>
+<tr>
+<td>Multicast</td>
+<td>FF00::/8</td>
+<td>Broadcast</td>
+<td>Comunicación a múltiples destinos</td>
+</tr>
+<tr>
+<td>Anycast</td>
+<td>-</td>
+<td>-</td>
+<td>Ruteo al nodo más cercano</td>
+</tr>
+</tbody>
+</table>
+<!-- ## Mecanismos de transición IPv4/IPv6
+
+1. **Doble Pila (Dual Stack)**
+
+   - Soporte simultáneo de IPv4 e IPv6
+   - Requiere compatibilidad en todos los dispositivos
+
+2. **Túneles IPv6 sobre IPv4**
+
+   ``` mermaid
+   graph LR
+   A[IPv6] |Encapsulado| B[IPv4]
+   B |Desencapsulado| C[IPv6]
+
+   ``` -->
+
+<h2 id="subnetting-en-ipv6-conceptos-claves">Subnetting en IPv6: Conceptos Claves<a class="headerlink" href="#subnetting-en-ipv6-conceptos-claves" title="Permanent link">&para;</a></h2>
+<p>En IPv6, el subnetting es más sencillo y flexible que en IPv4 gracias al amplio espacio de direcciones (128 bits). Las asignaciones siguen convenciones estándar que facilitan la planificación de redes.</p>
+<h3 id="estructura-general-de-una-direccion-ipv6">Estructura General de una Dirección IPv6<a class="headerlink" href="#estructura-general-de-una-direccion-ipv6" title="Permanent link">&para;</a></h3>
+<p>En IPv6, la estructura de la dirección se divide en tres partes principales cuando se realiza subnetting:</p>
+<table>
+<thead>
+<tr>
+<th>Prefijo de red</th>
+<th>Subred</th>
+<th>ID de interfaz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global Prefix</td>
+<td>Subnet ID</td>
+<td>Interface ID</td>
+</tr>
+<tr>
+<td>GGGG:GGGG:GGGG</td>
+<td>SSSS</td>
+<td>XXXX:XXXX:XXXX:XXXX</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Prefijo de Red</strong> (Normalmente 48-56 bits)</li>
+</ol>
+<ul>
+<li>Asignado por el ISP o RIR (Registro Regional de Internet)</li>
+<li>Ejemplos comunes:</li>
+<li><code>/48</code> para empresas (65k subredes disponibles)</li>
+<li><code>/56</code> para redes residenciales (256 subredes)</li>
+<li><code>/64</code> para enlaces individuales</li>
+</ul>
+<ol start="2">
+<li><strong>Campo de Subred</strong> (Variable, típicamente 16 bits en redes /48)</li>
+</ol>
+<ul>
+<li>
+<p>Permite crear jerarquías internas:</p>
+</li>
+<li>
+<p><code>/48</code>: Asignado por el ISP para empresas, permite 65,536 subredes /64.</p>
+</li>
+<li><code>/52</code>: Subdivisión del bloque /48 para regiones específicas.</li>
+<li><code>/56</code>: Subdivisión del bloque /52 para sucursales o clientes residenciales.</li>
+<li><code>/64</code>: Subred estándar para enlaces LAN/WAN.</li>
+</ul>
+<ol start="3">
+<li><strong>ID de Interface</strong> (64 bits)</li>
+</ol>
+<ul>
+<li>Generado automáticamente (SLAAC) o manualmente</li>
+<li>Usa comúnmente EUI-64 (derivado de MAC)</li>
+</ul>
+<h3 id="tamanos-de-prefijo-comunes-en-ipv6">Tamaños de prefijo comunes en IPv6<a class="headerlink" href="#tamanos-de-prefijo-comunes-en-ipv6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Prefijo</th>
+<th>Equivalente IPv4</th>
+<th>Uso típico</th>
+<th>Capacidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/128</code></td>
+<td>Dirección host</td>
+<td>Interface única</td>
+<td>1 dirección</td>
+</tr>
+<tr>
+<td><code>/64</code></td>
+<td>Subred estándar</td>
+<td>Por cada enlace LAN/WAN</td>
+<td>18.4 quintillones direcciones</td>
+</tr>
+<tr>
+<td><code>/56</code></td>
+<td>Bloque mediano</td>
+<td>ISPs a clientes residenciales</td>
+<td>256 subredes /64</td>
+</tr>
+<tr>
+<td><code>/48</code></td>
+<td>Bloque empresarial</td>
+<td>Empresas medianas/grandes</td>
+<td>65,536 subredes /64</td>
+</tr>
+<tr>
+<td><code>/32</code></td>
+<td>Bloque ISP</td>
+<td>Asignación a proveedores</td>
+<td>65,536 subredes /48</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-dividir-un-prefijo-48-en-subredes-64">Ejemplo: Dividir un prefijo <code>/48</code> en subredes <code>/64</code><a class="headerlink" href="#ejemplo-dividir-un-prefijo-48-en-subredes-64" title="Permanent link">&para;</a></h3>
+<p>Si una empresa recibe el prefijo <strong><code>2001:db8:abcd::/48</code></strong>, la estructura sería:</p>
+<h4 id="estructura-de-la-direccion-ipv6"><strong>Estructura de la dirección IPv6</strong><a class="headerlink" href="#estructura-de-la-direccion-ipv6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Sección</th>
+<th>Bits</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prefijo asignado</strong></td>
+<td>48</td>
+<td><code>2001:db8:abcd::/48</code></td>
+</tr>
+<tr>
+<td><strong>Subred interna</strong></td>
+<td>16</td>
+<td><code>0001</code> (Ejemplo: <code>2001:db8:abcd:0001::/64</code>)</td>
+</tr>
+<tr>
+<td><strong>ID de interfaz</strong></td>
+<td>64</td>
+<td><code>fe80::1a2b:3c4d:5e6f:7g8h</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="explicacion"><strong>Explicación</strong><a class="headerlink" href="#explicacion" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>El ISP asigna un /48</strong>, lo que deja <strong>16 bits</strong> para crear subredes.</li>
+<li><strong>Cada subred se identifica con 16 bits adicionales</strong>, permitiendo <strong>65.536 subredes</strong> (<code>0001</code>, <code>0002</code>, <code>0003</code>, ... hasta <code>ffff</code>).</li>
+<li><strong>El host ocupa los últimos 64 bits</strong>, generados automáticamente con SLAAC o configurados manualmente.</li>
+</ul>
+<h4 id="subredes-dentro-del-bloque-48"><strong>subredes dentro del bloque <code>/48</code></strong><a class="headerlink" href="#subredes-dentro-del-bloque-48" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Subred IPv6</th>
+<th>Departamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2001:db8:abcd:0001::/64</code></td>
+<td>Administración</td>
+</tr>
+<tr>
+<td><code>2001:db8:abcd:0002::/64</code></td>
+<td>Desarrollo</td>
+</tr>
+<tr>
+<td><code>2001:db8:abcd:0003::/64</code></td>
+<td>Producción</td>
+</tr>
+<tr>
+<td><code>2001:db8:abcd:0004::/64</code></td>
+<td>IoT</td>
+</tr>
+</tbody>
+</table>
+<p>Cada departamento tiene una subred <code>/64</code> con <strong>18.4×10¹⁹ direcciones disponibles</strong>.</p>
+<h3 id="ejercicio-resuelto-subnetting-ipv6-con-vlsm">Ejercicio Resuelto: Subnetting IPv6 con VLSM<a class="headerlink" href="#ejercicio-resuelto-subnetting-ipv6-con-vlsm" title="Permanent link">&para;</a></h3>
+<p>Una empresa ha obtenido el prefijo <strong>2001:DB8:ACAD::/48</strong> y necesita dividir su red en varias subredes para sus diferentes departamentos. La empresa tiene los siguientes requisitos:</p>
+<ol>
+<li>Departamento de Informática: Requiere 5 subredes, cada una con al menos 500 hosts.</li>
+<li>Departamento de Administración: Necesita 4 subredes, cada una con 1000 hosts.</li>
+<li>Departamento de Profesorado: Requiere 2 subredes, cada una con 2000 hosts.</li>
+<li>Zona WiFi: Necesita una subred con al menos 4000 hosts.</li>
+<li>Enlaces punto a punto: Se requieren 5 enlaces entre routers, cada uno con 2 direcciones IP.</li>
+</ol>
+<h4 id="preguntas">Preguntas:<a class="headerlink" href="#preguntas" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Asignar subredes con el menor prefijo posible para optimizar el uso de direcciones.</li>
+<li>Indicar la dirección de red y la primera y última dirección utilizable de cada subred.</li>
+<li>Explicar cuántas direcciones se desperdician en cada subred.</li>
+<li>Justificar cómo se podría mejorar la eficiencia del direccionamiento.</li>
+</ol>
+<h4 id="resolucion">Resolución<a class="headerlink" href="#resolucion" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Requerimientos por Departamento</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Departamento</th>
+<th>Subredes</th>
+<th>Hosts/Subred</th>
+<th>Prefijo Óptimo</th>
+<th>Direcciones/Subred</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Informática</td>
+<td>5</td>
+<td>≥500</td>
+<td>/64</td>
+<td>18.4×10¹⁹</td>
+</tr>
+<tr>
+<td>Administración</td>
+<td>4</td>
+<td>≥1000</td>
+<td>/64</td>
+<td>18.4×10¹⁹</td>
+</tr>
+<tr>
+<td>Profesorado</td>
+<td>2</td>
+<td>≥2000</td>
+<td>/64</td>
+<td>18.4×10¹⁹</td>
+</tr>
+<tr>
+<td>Zona WiFi</td>
+<td>1</td>
+<td>≥4000</td>
+<td>/64</td>
+<td>18.4×10¹⁹</td>
+</tr>
+<tr>
+<td>Enlaces P2P</td>
+<td>5</td>
+<td>2</td>
+<td>/127</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>Tabla de Asignación de Subredes</strong></li>
+</ol>
+<p>El prefijo 2001:DB8:ACAD::/48 permite crear múltiples subredes de tamaño /64 sin problemas de escasez de direcciones.</p>
+<table>
+<thead>
+<tr>
+<th>N°</th>
+<th>Departamento</th>
+<th>Nombre Subred</th>
+<th>Dirección de Red</th>
+<th>Prefijo</th>
+<th>Primera Dirección Útil</th>
+<th>Última Dirección Útil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Informática</td>
+<td>Subred 1</td>
+<td>2001:DB8:ACAD:0000::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0000::1</td>
+<td>2001:DB8:ACAD:0000:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Informática</td>
+<td>Subred 2</td>
+<td>2001:DB8:ACAD:0001::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0001::1</td>
+<td>2001:DB8:ACAD:0001:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Informática</td>
+<td>Subred 3</td>
+<td>2001:DB8:ACAD:0002::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0002::1</td>
+<td>2001:DB8:ACAD:0002:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Informática</td>
+<td>Subred 4</td>
+<td>2001:DB8:ACAD:0003::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0003::1</td>
+<td>2001:DB8:ACAD:0003:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Informática</td>
+<td>Subred 5</td>
+<td>2001:DB8:ACAD:0004::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0004::1</td>
+<td>2001:DB8:ACAD:0004:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Administración</td>
+<td>Subred 1</td>
+<td>2001:DB8:ACAD:0005::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0005::1</td>
+<td>2001:DB8:ACAD:0005:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Administración</td>
+<td>Subred 2</td>
+<td>2001:DB8:ACAD:0006::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0006::1</td>
+<td>2001:DB8:ACAD:0006:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Administración</td>
+<td>Subred 3</td>
+<td>2001:DB8:ACAD:0007::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0007::1</td>
+<td>2001:DB8:ACAD:0007:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Administración</td>
+<td>Subred 4</td>
+<td>2001:DB8:ACAD:0008::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0008::1</td>
+<td>2001:DB8:ACAD:0008:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Profesorado</td>
+<td>Subred 1</td>
+<td>2001:DB8:ACAD:0009::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:0009::1</td>
+<td>2001:DB8:ACAD:0009:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Profesorado</td>
+<td>Subred 2</td>
+<td>2001:DB8:ACAD:000A::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:000A::1</td>
+<td>2001:DB8:ACAD:000A:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Zona WiFi</td>
+<td>WiFi Principal</td>
+<td>2001:DB8:ACAD:000B::</td>
+<td>/64</td>
+<td>2001:DB8:ACAD:000B::1</td>
+<td>2001:DB8:ACAD:000B:FFFF:FFFF:FFFF:FFFE</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Enlaces</td>
+<td>Enlace P2P 1</td>
+<td>2001:DB8:ACAD:FF01::</td>
+<td>/127</td>
+<td>2001:DB8:ACAD:FF01::0</td>
+<td>2001:DB8:ACAD:FF01::1</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Enlaces</td>
+<td>Enlace P2P 2</td>
+<td>2001:DB8:ACAD:FF02::</td>
+<td>/127</td>
+<td>2001:DB8:ACAD:FF02::0</td>
+<td>2001:DB8:ACAD:FF02::1</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Enlaces</td>
+<td>Enlace P2P 3</td>
+<td>2001:DB8:ACAD:FF03::</td>
+<td>/127</td>
+<td>2001:DB8:ACAD:FF03::0</td>
+<td>2001:DB8:ACAD:FF03::1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Enlaces</td>
+<td>Enlace P2P 4</td>
+<td>2001:DB8:ACAD:FF04::</td>
+<td>/127</td>
+<td>2001:DB8:ACAD:FF04::0</td>
+<td>2001:DB8:ACAD:FF04::1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Enlaces</td>
+<td>Enlace P2P 5</td>
+<td>2001:DB8:ACAD:FF05::</td>
+<td>/127</td>
+<td>2001:DB8:ACAD:FF05::0</td>
+<td>2001:DB8:ACAD:FF05::1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Subredes /64</strong>:<br />
+- Capacidad: 18,446,744,073,709,551,616 direcciones cada una<br />
+- Última dirección válida: <code>[Prefijo]:FFFF:FFFF:FFFF:FFFE</code>  </p>
+<p><strong>Enlaces P2P /127</strong>:<br />
+- Solo 2 direcciones utilizables (xxx::0 y xxx::1)<br />
+- Recomendado por RFC 6164 para enlaces punto a punto  </p>
+<p><strong>Numeración Hexadecimal</strong>:<br />
+- Secuencia lógica: 0000-0004 (Informática), 0005-0008 (Administración), etc.<br />
+- Enlaces usan rango FF01-FF05 para fácil identificación  </p>
+</div>
+<ol start="3">
+<li><strong>Desperdicio por subred:</strong>
+En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesiten pocos hosts, siempre se reservan direcciones.</li>
+</ol>
+<p>•   Cada subred /64: 
+•   Enlaces punto a punto /127: 0% desperdicio (usa exactamente 2 direcciones).</p>
+<ol start="4">
+<li><strong>Optimización/Mejores Prácticas para IPv6</strong></li>
+</ol>
+<h5 id="agregacion-de-rutas">Agregación de rutas<a class="headerlink" href="#agregacion-de-rutas" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Comando</th>
+<th>Uso Recomendado</th>
+<th>Beneficios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resumen de rutas</strong></td>
+<td><code>ipv6 route 2001:DB8::/32 Null0</code></td>
+<td>Redes con &gt;50 subredes</td>
+<td>Reduce tabla de routing en un 90%</td>
+</tr>
+<tr>
+<td><strong>Rutas estáticas</strong></td>
+<td><code>ipv6 route 2001:DB8:1::/64 2001:DB8:FFFF::1</code></td>
+<td>Conexiones a ISPs</td>
+<td>Latencia mínima (1-2ms)</td>
+</tr>
+<tr>
+<td><strong>Rutas flotantes</strong></td>
+<td><code>ipv6 route ::/0 2001:DB8:AAAA::1 200</code></td>
+<td>Links de backup</td>
+<td>Failover automático</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Configuración</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># bash para P2P</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span>ip<span class="w"> </span>-6<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">2001</span>:DB8:ACAD:FF01::/127<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># IOS Cisco</span>
+<span class="linenos" data-linenos="2 "></span><span class="nb">enable</span>
+<span class="linenos" data-linenos="3 "></span>configure<span class="w"> </span>terminal
+<span class="linenos" data-linenos="4 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:DB8:ACAD:0000::/52<span class="w"> </span>GigabitEthernet0/0
+<span class="linenos" data-linenos="5 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:DB8:ACAD:1000::/52<span class="w"> </span>GigabitEthernet0/1
+<span class="linenos" data-linenos="6 "></span>end
+<span class="linenos" data-linenos="7 "></span>write<span class="w"> </span>memory
+</code></pre></div>
+<h5 id="planificacion-jerarquica">Planificación jerárquica:<a class="headerlink" href="#planificacion-jerarquica" title="Permanent link">&para;</a></h5>
+<p>Reservar bloques contiguos para futuras expansiones</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2024-2025 Francisco Javier Hernández Illán - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<fj.hernandez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/fjavier-hernandez-illan" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookie</h4>
+<p>Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes. Con tu consentimiento, me ayudas a mejorar estos materiales.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -14,6 +14,8 @@
         <link rel="prev" href="../index.html">
       
       
+        <link rel="next" href="../IPv6/IPv6.html">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
@@ -392,6 +394,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPv6/IPv6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPv6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -415,28 +437,32 @@
 </div>
 <h2 id="pasos-para-distribuir-subredes-con-vlsm">Pasos para Distribuir Subredes con VLSM<a class="headerlink" href="#pasos-para-distribuir-subredes-con-vlsm" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>Identificar las Necesidades de Hosts</strong>:
-   - Haz una lista de todas las subredes que necesitas y el número de hosts requeridos para cada una.</p>
-</li>
-<li>
-<p><strong>Ordenar las Subredes</strong>:
-   - Ordena las subredes en orden descendente según el número de hosts necesarios. Esto asegura que las subredes más grandes se asignen primero, evitando fragmentación. Aunque si que vamos a tener en cuenta posibilidad de crecimiento en ciertas subredes.</p>
-</li>
-<li>
-<p><strong>Calcular la Máscara de Subred</strong>:
-   - Para cada subred, calcula la máscara de subred necesaria usando la fórmula:</p>
-</li>
+<li><strong>Identificar las Necesidades de Hosts</strong>:</li>
 </ol>
+<ul>
+<li>Haz una lista de todas las subredes que necesitas y el número de hosts requeridos para cada una.</li>
+</ul>
+<ol start="2">
+<li><strong>Ordenar las Subredes</strong>:</li>
+</ol>
+<ul>
+<li>Ordena las subredes en orden descendente según el número de hosts necesarios. Esto asegura que las subredes más grandes se asignen primero, evitando fragmentación. Aunque si que vamos a tener en cuenta posibilidad de crecimiento en ciertas subredes.</li>
+</ul>
+<ol start="3">
+<li><strong>Calcular la Máscara de Subred</strong>:</li>
+</ol>
+<ul>
+<li>Para cada subred, calcula la máscara de subred necesaria usando la fórmula:</li>
+</ul>
 <p><span class="arithmatex">\(2^h - 2 \geq \text{número de hosts}\)</span> donde <span class="arithmatex">\( h \)</span> es el número de bits de host.</p>
 <ol start="4">
-<li>
-<p><strong>Asignar Direcciones IP</strong>:
-   - Comienza con la primera subred y asigna el rango de direcciones IP adecuado. Luego, ajusta la máscara de subred y repite el proceso para las siguientes subredes.</p>
-</li>
-<li>
-<p><strong>Actualizar la Tabla de Subredes</strong>:</p>
-</li>
+<li><strong>Asignar Direcciones IP</strong>:</li>
+</ol>
+<ul>
+<li>Comienza con la primera subred y asigna el rango de direcciones IP adecuado. Luego, ajusta la máscara de subred y repite el proceso para las siguientes subredes.</li>
+</ul>
+<ol start="5">
+<li><strong>Actualizar la Tabla de Subredes</strong>:</li>
 </ol>
 <ul>
 <li>Mantén una tabla con la siguiente información para cada subred:<ul>
