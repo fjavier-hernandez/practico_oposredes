@@ -321,13 +321,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" class="md-nav__link">
+  <a href="#ejercicio-1-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs
+      Ejercicio 1: Diseño de Subredes con VLSM y Seguridad en VLANs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs">
+    <nav class="md-nav" aria-label="Ejercicio 1: Diseño de Subredes con VLSM y Seguridad en VLANs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -386,6 +386,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-examen-castilla-y-leon-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2: Examen Castilla y León 2020
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2: Examen Castilla y León 2020">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-asignacion-direcciones-y-mascaras" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Asignación direcciones y mascaras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-responda" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Responda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -406,6 +439,26 @@
   
   <span class="md-ellipsis">
     IPv6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enrutamiento/Enrutamiento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enrutamiento
   </span>
   
 
@@ -526,7 +579,7 @@ pie
 <li>Departamento B: 192.168.1.64/27 (Rango: 192.168.1.65 - 192.168.1.94)</li>
 <li>Departamento C: 192.168.1.96/28 (Rango: 192.168.1.97 - 192.168.1.110)</li>
 </ul>
-<h2 id="ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans">Ejercicio: Diseño de Subredes con VLSM y Seguridad en VLANs<a class="headerlink" href="#ejercicio-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-1-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans">Ejercicio 1: Diseño de Subredes con VLSM y Seguridad en VLANs<a class="headerlink" href="#ejercicio-1-diseno-de-subredes-con-vlsm-y-seguridad-en-vlans" title="Permanent link">&para;</a></h2>
 <p>Una institución educativa ha adquirido el bloque de direcciones <code>172.16.0.0/22</code> y necesita dividirlo en subredes eficientes usando VLSM. </p>
 <!-- Además, cada subred representará una VLAN en la red, asegurando segmentación y control de tráfico. -->
 
@@ -706,6 +759,320 @@ Asignamos números dentro de un rango predefinido según el tipo de uso:
 - Se ha optimizado el uso de direcciones, alcanzando una eficiencia del 62.5%.
 - Se han asignado VLANs adecuadas para segmentar la red y mejorar la seguridad.
  -->
+
+<h2 id="ejercicio-2-examen-castilla-y-leon-2020">Ejercicio 2: Examen Castilla y León 2020<a class="headerlink" href="#ejercicio-2-examen-castilla-y-leon-2020" title="Permanent link">&para;</a></h2>
+<p>A partir de la IP <code>10.14.0.0</code> con máscara <code>255.254.0.0</code>, obtener el máximo número de subredes de un mínimo de 1800 equipos cliente, teniendo en cuenta que cada subred deberá tener acceso a Internet a través de la última IP adecuada para ello.</p>
+<h3 id="1-asignacion-direcciones-y-mascaras">1. Asignación direcciones y mascaras<a class="headerlink" href="#1-asignacion-direcciones-y-mascaras" title="Permanent link">&para;</a></h3>
+<p>Indique para la 1ª, 2ª y última subred sus direcciones IP, máscaras abreviadas, rangos asignables e IPs de difusión.</p>
+<h4 id="calculos-preliminares">Cálculos Preliminares:<a class="headerlink" href="#calculos-preliminares" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Dirección de red base: 10.14.0.0 /15</li>
+<li>Número de bits de host iniciales: 32 - 15 = 17 bits.</li>
+<li>Número máximo de hosts iniciales por subred: <span class="arithmatex">\(2^{17} - 2 = 131070\)</span>.</li>
+</ul>
+<p><strong>Necesitamos un mínimo de 1800 equipos cliente por subred. Calculamos el número de bits de host necesarios (<span class="arithmatex">\(h\)</span>):</strong></p>
+<ul>
+<li><span class="arithmatex">\(2^h - 2 \ge 1800\)</span></li>
+<li><span class="arithmatex">\(2^{10} - 2 = 1022\)</span> (insuficiente)</li>
+<li><span class="arithmatex">\(2^{11} - 2 = 2046\)</span> (suficiente)</li>
+</ul>
+<p><strong>Por lo tanto, necesitamos 11 bits de host por subred.</strong> </p>
+<ol>
+<li>Esto significa que tomaremos <span class="arithmatex">\(17 - 11 = 6\)</span> bits de la porción de host original para crear subredes. </li>
+<li>Nueva máscara de subred: 15 (bits de red originales) + 6 (bits de subred) = 21 bits (/21 o 255.255.248.0)</li>
+</ol>
+<p><strong>Tabla de asignación:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Subred</th>
+<th>Dirección de red</th>
+<th>CIDR</th>
+<th>Rango de hosts</th>
+<th>Broadcast</th>
+<th>Última IP útil (para gateway)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1ª</td>
+<td>10.14.0.0</td>
+<td>/21</td>
+<td>10.14.0.1 – 10.14.7.254</td>
+<td>10.14.7.255</td>
+<td>10.14.7.254</td>
+</tr>
+<tr>
+<td>2ª</td>
+<td>10.14.8.0</td>
+<td>/21</td>
+<td>10.14.8.1 – 10.14.15.254</td>
+<td>10.14.15.255</td>
+<td>10.14.15.254</td>
+</tr>
+<tr>
+<td>Última</td>
+<td>10.15.248.0</td>
+<td>/21</td>
+<td>10.15.248.1 – 10.15.255.254</td>
+<td>10.15.255.255</td>
+<td>10.15.255.254</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-responda">2. Responda<a class="headerlink" href="#2-responda" title="Permanent link">&para;</a></h3>
+<h4 id="i-cuantas-subredes-hay-cuantas-ips-hay-disponibles-en-cada-subred-para-futuros-nuevos-equipos">i. ¿Cuántas subredes hay? ¿Cuántas IPs hay disponibles en cada subred para futuros nuevos equipos?<a class="headerlink" href="#i-cuantas-subredes-hay-cuantas-ips-hay-disponibles-en-cada-subred-para-futuros-nuevos-equipos" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Número de subredes posibles: <span class="arithmatex">\(2^6 = 64\)</span> subredes.</li>
+<li>Cada subred suma 2048 direcciones = 10.14.0.0 + (n × 2048).</li>
+</ul>
+<h4 id="ii-direccion-ip-de-la-subred-no-54">ii. Dirección IP de la subred nº 54<a class="headerlink" href="#ii-direccion-ip-de-la-subred-no-54" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Calculo rápido:</p>
+<ol>
+<li>
+<p><strong>Cálculo rápido de dirección de subred N (sin decimales) para la subred número N</strong>:</p>
+<ul>
+<li><strong>Segundo octeto</strong>: <span class="arithmatex">\(14 + \lfloor N / 32 \rfloor\)</span></li>
+<li><strong>Tercer octeto</strong>: <span class="arithmatex">\((N \mod 32) \times 8\)</span></li>
+<li><strong>Resultado</strong>: <code>10.[segundo].[tercero].0/21</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Cálculo para la subred número 54</strong>:</p>
+<ul>
+<li><strong>Segundo octeto</strong>: <span class="arithmatex">\(14 + \lfloor 54 / 32 \rfloor = 15\)</span></li>
+<li><strong>Tercer octeto</strong>: <span class="arithmatex">\(54 \mod 32 = 22 \rightarrow 22 \times 8 = 176\)</span></li>
+<li><strong>Dirección de subred</strong>: <code>10.15.176.0/21</code></li>
+<li><strong>Rango de hosts</strong>: <code>10.15.176.1 – 10.15.183.254</code></li>
+<li><strong>IP de difusión</strong>: <code>10.15.183.255</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="iii-dada-las-siguientes-direcciones-ip-cual-es-el-no-de-la-subred-a-la-que-pertenece-a-quien-podria-estar-asignada-la-ip">iii. Dada las siguientes direcciones IP, ¿Cuál es el nº de la subred a la que pertenece? ¿A quién podría estar asignada la IP?<a class="headerlink" href="#iii-dada-las-siguientes-direcciones-ip-cual-es-el-no-de-la-subred-a-la-que-pertenece-a-quien-podria-estar-asignada-la-ip" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Calculo rápido:</p>
+<ol>
+<li>
+<p><strong><code>10.15.231.254</code>:</strong></p>
+<ul>
+<li>Tercer octeto = 231</li>
+<li>Tamaño del bloque = 8 (por /21 → 2^(32-21) = 2048 direcciones)</li>
+<li>Subred número = (231 ÷ 8) + 1 = 29</li>
+<li>Dirección de red: 10.15.224.0/21</li>
+<li>➡️ Pertenece a la subred nº 29</li>
+<li>➡️ Es la última IP usable, ideal para gateway</li>
+</ul>
+</li>
+<li>
+<p><strong><code>10.14.84.0</code>:</strong></p>
+<ul>
+<li>Tercer octeto = 84</li>
+<li>Tamaño del bloque = 8 (por /21 → 2^(32-21) = 2048 direcciones)</li>
+<li>Subred número = (84 ÷ 8) + 1 = 11</li>
+<li>Dirección de red: 10.14.80.0/21</li>
+<li>➡️ Pertenece a la subred nº 11</li>
+<li>➡️ Es la dirección de red de esa subred, por lo que no estaría asignada a un equipo cliente.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="iv-suponiendo-que-la-asignacion-de-ips-en-las-subredes-es-consecutiva-y-que-la-numeracion-de-los-equipos-cliente-comienza-en-1-indique">iv. Suponiendo que la asignación de IPs en las subredes es consecutiva, y que la numeración de los equipos cliente comienza en 1, indique:<a class="headerlink" href="#iv-suponiendo-que-la-asignacion-de-ips-en-las-subredes-es-consecutiva-y-que-la-numeracion-de-los-equipos-cliente-comienza-en-1-indique" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Calculo rápido:</p>
+<ol>
+<li><strong>Dirección IP del equipo Nº 500 de la subred Nº 42:</strong></li>
+</ol>
+<ul>
+<li>Subred 42:<ul>
+<li>Segundo octeto: <span class="arithmatex">\(14 + \lfloor 42 / 32 \rfloor = 15\)</span></li>
+<li>Tercer octeto: <span class="arithmatex">\((42 \mod 32) \times 8 = 10 \times 8 = 80\)</span></li>
+<li>Dirección de red: <code>10.15.80.0/21</code></li>
+</ul>
+</li>
+<li>Cálculo del equipo 500:<ul>
+<li><span class="arithmatex">\(500 = 1\)</span> bloque de 256 + 244</li>
+<li>Tercer octeto: <span class="arithmatex">\(80 + 1 = 81\)</span></li>
+<li>Cuarto octeto: <span class="arithmatex">\(244\)</span></li>
+</ul>
+</li>
+<li><strong>IP equipo 500</strong>: <code>10.15.81.244</code></li>
+</ul>
+<ol start="2">
+<li>
+<p><strong>Nº del equipo con dirección IP <code>10.14.77.34</code>:</strong></p>
+<ul>
+<li>Subred más próxima por debajo: <code>10.14.72.0/21</code> → subred nº 9  </li>
+<li><span class="arithmatex">\(77 - 72 = 5\)</span> → se han recorrido 5 bloques de 256  </li>
+<li>Cuarto octeto: 34  </li>
+<li>➡️ Nº de equipo = <span class="arithmatex">\((5 × 256) + 34 = 1314\)</span>  </li>
+<li>➡️ Equipo nº 1314 de la subred nº 9  </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="v-de-cara-a-la-confeccion-de-una-hoja-de-calculo-que-permita-automatizar-el-proceso-de-localizar-equipos-en-subredes-indique-como-se-puede-obtener">v. De cara a la confección de una hoja de cálculo que permita automatizar el proceso de localizar equipos en subredes, indique cómo se puede obtener:<a class="headerlink" href="#v-de-cara-a-la-confeccion-de-una-hoja-de-calculo-que-permita-automatizar-el-proceso-de-localizar-equipos-en-subredes-indique-como-se-puede-obtener" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Calculo rápido:</p>
+<ol>
+<li><strong>La dirección IP de subred, a partir de un Nº de subred (llamado <code>N</code>):</strong><ul>
+<li>Dirección IP de subred = Dirección de red base (10.14.0.0) + <code>(N - 1) × 2048</code>.</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Fórmula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segundo octeto</td>
+<td><code>=14 + INT(A1/32)</code></td>
+</tr>
+<tr>
+<td>Tercer octeto</td>
+<td><code>=(A1 MOD 32)*8</code></td>
+</tr>
+<tr>
+<td>Dirección completa</td>
+<td><code>"10." &amp; (14+INT(A1/32)) &amp; "." &amp; ((A1 MOD 32)*8) &amp; ".0"</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>La dirección IP de un equipo dentro de una subred, a partir del Nº de equipo (llamado <code>H</code>) y la dirección de su subred <code>10.a.b.c</code>:</strong><ul>
+<li>Dirección IP del equipo = Dirección de subred (<code>10.a.b.c</code>) + <code>H</code>.</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Fórmula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tercer octeto</td>
+<td><code>=INT((H-1)/256)</code></td>
+</tr>
+<tr>
+<td>Cuarto octeto</td>
+<td><code>=MOD((H-1), 256) + 1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<!-- **Cálculos Preliminares:**
+
+- Dirección de red base: 10.14.0.0 /15
+- Número de bits de host iniciales: 32 - 15 = 17 bits.
+- Número máximo de hosts iniciales por subred: $2^{17} - 2 = 131070$.
+
+Necesitamos un mínimo de 1800 equipos cliente por subred. Calculamos el número de bits de host necesarios ($h$):
+$2^h - 2 \ge 1800$
+$2^{10} - 2 = 1022$ (insuficiente)
+$2^{11} - 2 = 2046$ (suficiente)
+
+Por lo tanto, necesitamos 11 bits de host por subred. Esto significa que tomaremos $17 - 11 = 6$ bits de la porción de host original para crear subredes.
+
+- Número de subredes posibles: $2^6 = 64$ subredes.
+- Nueva máscara de subred: 15 (bits de red originales) + 6 (bits de subred) = 21 bits (/21 o 255.255.248.0).
+
+### a) Indique para la 1ª, 2ª y última subred sus direcciones IP, máscaras abreviadas, rangos asignables e IPs de difusión.
+
+- **Subred 1:**
+    - Dirección IP de subred: 10.14.0.0
+    - Máscara abreviada: /21
+    - Rango asignable: 10.14.0.1 - 10.14.7.254
+    - IP de difusión: 10.14.7.255
+    - IP para acceso a Internet (última IP asignable): 10.14.7.254
+
+- **Subred 2:**
+    - Dirección IP de subred: 10.14.8.0
+    - Máscara abreviada: /21
+    - Rango asignable: 10.14.8.1 - 10.14.15.254
+    - IP de difusión: 10.14.15.255
+    - IP para acceso a Internet (última IP asignable): 10.14.15.254
+
+- **Última Subred (Subred 64):**
+    - Para encontrar la última subred, incrementamos la dirección de red base en saltos del tamaño del bloque de subred. El tamaño del bloque de subred es $2^{(32-21)} = 2^{11} = 2048$ direcciones.
+    - El desplazamiento para la subred 64 es $(64 - 1) \times 2048 = 63 \times 2048 = 129024$.
+    - Dirección de red base en formato numérico: $10 \times 2^{24} + 14 \times 2^{16} + 0 \times 2^8 + 0 = 167772160 + 917504 = 168689664$.
+    - Desplazamiento en formato numérico: $129024$.
+    - Dirección de la última subred en formato numérico: $168689664 + 129024 = 168818688$.
+    - Convirtiendo a formato decimal con puntos: 10.15.248.0
+    - Dirección IP de subred: 10.15.248.0
+    - Máscara abreviada: /21
+    - Rango asignable: 10.15.248.1 - 10.15.255.254
+    - IP de difusión: 10.15.255.255
+    - IP para acceso a Internet (última IP asignable): 10.15.255.254
+
+### b) Responda:
+
+#### i. ¿Cuántas subredes hay? ¿Cuántas IPs hay disponibles en cada subred para futuros nuevos equipos?
+- Hay $2^6 = 64$ subredes.
+- Cada subred tiene $2^{11} - 2 = 2046$ IPs disponibles para equipos cliente.
+
+#### ii. Dirección IP de la subred nº 54.
+- El desplazamiento para la subred 54 es $(54 - 1) \times 2048 = 53 \times 2048 = 108464$.
+- Dirección de red base en formato numérico: $168689664$.
+- Dirección de la subred 54 en formato numérico: $168689664 + 108464 = 168798128$.
+- Convirtiendo a formato decimal con puntos: 10.15.208.0
+- Dirección IP de la subred nº 54: 10.15.208.0
+
+#### iii. Dada las siguientes direcciones IP ¿Cuál es el nº de la subred a la que pertenece? ¿A quién podría estar asignada la IP?
+- **10.15.231.254:**
+    - Dirección IP en formato numérico: $10 \times 2^{24} + 15 \times 2^{16} + 231 \times 2^8 + 254 = 167772160 + 983040 + 59136 + 254 = 168814590$.
+    - Dirección de red base en formato numérico: $168689664$.
+    - Diferencia: $168814590 - 168689664 = 124926$.
+    - Número de subred: $\lfloor \frac{124926}{2048} \rfloor + 1 = 61 + 1 = 62$.
+    - La IP 10.15.231.254 pertenece a la subred nº 62. Podría estar asignada a un equipo cliente de esa subred.
+
+- **10.14.84.0:**
+    - Dirección IP en formato numérico: $10 \times 2^{24} + 14 \times 2^{16} + 84 \times 2^8 + 0 = 167772160 + 917504 + 21504 + 0 = 168715168$.
+    - Dirección de red base en formato numérico: $168689664$.
+    - Diferencia: $168715168 - 168689664 = 25504$.
+    - Número de subred: $\lfloor \frac{25504}{2048} \rfloor + 1 = 12 + 1 = 13$.
+    - La IP 10.14.84.0 es la dirección de red de la subred nº 13, por lo que no estaría asignada a un equipo cliente.
+
+#### iv. Suponiendo que la asignación de IPs en las subredes es consecutiva, y que la numeración de los equipos cliente comienza en 1, indique:
+
+- **Dirección IP del equipo Nº 500 de la subred Nº 42.**
+    - Dirección de red de la subred 42: $(42 - 1) \times 2048 = 41 \times 2048 = 83968$ de desplazamiento. Dirección base + desplazamiento = 10.14.0.0 + 83968 = 10.15.64.0.
+    - La dirección IP del equipo Nº 500 es la dirección de red + 500: 10.15.64.0 + 500 = 10.15.65.196.
+
+- **Nº del equipo con dirección IP 10.14.77.34.**
+    - Esta IP pertenece a la subred que comienza en 10.14.72.0 (subred número $\lfloor \frac{(10 \times 2^{24} + 14 \times 2^{16} + 72 \times 2^8 + 0) - 168689664}{2048} \rfloor + 1 = \lfloor \frac{49152}{2048} \rfloor + 1 = 24 + 1 = 25$).
+    - Desplazamiento dentro de la subred: $(10 \times 2^{24} + 14 \times 2^{16} + 77 \times 2^8 + 34) - (10 \times 2^{24} + 14 \times 2^{16} + 72 \times 2^8 + 0) = 12834$.
+    - El número del equipo es el desplazamiento dentro del rango asignable: $12834$.
+
+#### v. De cara a la confección de una hoja de cálculo que permita automatizar el proceso de localizar equipos en subredes, indique cómo se puede obtener:
+
+- **La dirección IP de subred, a partir de un Nº de subred (llamado N).**
+    - Tamaño del bloque de subred en direcciones: $2^{(32-21)} = 2048$.
+    - Desplazamiento para la subred N: $(N - 1) \times 2048$.
+    - Dirección IP de subred: Dirección de red base (10.14.0.0) + Desplazamiento.
+    - En formato numérico: $(10 \times 2^{24} + 14 \times 2^{16} + 0 \times 2^8 + 0) + (N - 1) \times 2048$.
+    - Convertir el resultado numérico a formato decimal con puntos.
+
+- **La dirección IP de un equipo dentro de una subred, a partir del Nº de equipo (Llamado H) y la dirección de su subred 10.a.b.c.**
+    - Dirección IP del equipo: Dirección de subred + H.
+    - En formato numérico: $(10 \times 2^{24} + a \times 2^{16} + b \times 2^8 + c) + H$.
+    - Convertir el resultado numérico a formato decimal con puntos. -->
 
 
 
