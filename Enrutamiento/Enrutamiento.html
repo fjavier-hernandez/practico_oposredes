@@ -427,30 +427,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#ejemplo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ejemplo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ejemplo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#solucion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Solución
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -565,269 +541,97 @@
 <span class="linenos" data-linenos=" 9 "></span><span class="c1"># Eliminar ruta</span>
 <span class="linenos" data-linenos="10 "></span>ip<span class="w"> </span>route<span class="w"> </span>del<span class="w"> </span><span class="m">192</span>.168.2.0/24
 </code></pre></div>
-<h2 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Indica la tabla de rutas del Router2 para que todo el sistema se comunique correctamente.  </li>
-<li>Hay que tener en cuenta que las IPs de cada interfaz están en el ámbito de la red a la cual enlaza esa interfaz.  </li>
-<li>Si se necesita alguna Dirección IP concreta, asignarla teniendo en cuenta lo dicho anteriormente y escribirla directamente sobre el mapa de red:  </li>
-</ul>
-<p><img alt="alt text" src="image.png" /></p>
-<h3 id="solucion">Solución<a class="headerlink" href="#solucion" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Marcamos las redes en el mapa de red</li>
-</ul>
+<!-- ## Ejemplo
+
+- Indica la tabla de rutas del Router2 para que todo el sistema se comunique correctamente.  
+- Hay que tener en cuenta que las IPs de cada interfaz están en el ámbito de la red a la cual enlaza esa interfaz.  
+- Si se necesita alguna Dirección IP concreta, asignarla teniendo en cuenta lo dicho anteriormente y escribirla directamente sobre el mapa de red:  
+
+![alt text](image.png)
+
+### Solución
+
+- Marcamos las redes en el mapa de red
+
 <div style="text-align: center;">
     <img src="image-1.png" alt="Mapa de red" style="width: 100%; height: auto;">
     <p><strong>Figura 2.</strong> Mapa de red con las redes señaladas y algunas direcciones IPv4</p>
 </div>
 
-<h4 id="tabla-de-rutas-estatico">Tabla de rutas estático<a class="headerlink" href="#tabla-de-rutas-estatico" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Red destino</th>
-<th>Máscara</th>
-<th>Siguiente</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10.100.2.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>10.100.5.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>10.100.1.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>172.16.100.0</td>
-<td>255.255.255.0</td>
-<td>10.100.5.4</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>172.16.101.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>172.16.10.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>172.16.20.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-</tbody>
-</table>
-<p>Como se observa en la solución de la página anterior, la red destino <code>81.2.5.0</code> no ha sido incluida en la tabla de enrutamiento. Esto se debe a que es una red pública en el ámbito de Internet, según lo especificado en el <a href="https://datatracker.ietf.org/doc/html/rfc1918">RFC 1918</a>. Por lo tanto, su tráfico será procesado utilizando la ruta por defecto (<code>0.0.0.0</code>).</p>
-<p>Es importante destacar que los destinos <code>10.100.1.0</code>, <code>172.16.101.0</code>, <code>172.16.10.0</code>, <code>172.16.20.0</code> y <code>81.2.5.0</code> son alcanzados a través de la dirección IPv4 <code>10.100.2.3</code>, que corresponde a la interfaz <code>Se0/0/0</code> del dispositivo <code>Router3</code>.</p>
-<h4 id="enrutamiento-dinamico">Enrutamiento dinámico<a class="headerlink" href="#enrutamiento-dinamico" title="Permanent link">&para;</a></h4>
-<p>Si el enrutamiento fuera dinámico, utilizando un protocolo de enrutamiento interior como <code>Routing Information Protocol</code> (RIP), <code>Enhanced Interior Gateway Routing Protocol</code> (EIGRP) o <code>Open Shortest Path First</code> (OSPF), y no se desactivara la función de sumarización de rutas mediante el comando <code>no auto-summary</code> (habilitado por defecto), el dispositivo <code>Router2</code> resumiría todas estas rutas. En ese caso, la tabla de enrutamiento quedaría de la siguiente manera:</p>
-<h5 id="tabla-de-enrutamiento-del-dispositivo-router2-con-sumarizacion-de-rutas">Tabla de enrutamiento del dispositivo ‘Router2’ con sumarización de rutas:<a class="headerlink" href="#tabla-de-enrutamiento-del-dispositivo-router2-con-sumarizacion-de-rutas" title="Permanent link">&para;</a></h5>
-<table>
-<thead>
-<tr>
-<th>Red destino</th>
-<th>Máscara</th>
-<th>Siguiente</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10.100.2.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>10.100.5.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>172.16.100.0</td>
-<td>255.255.255.0</td>
-<td>10.100.5.4</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-</tbody>
-</table>
-<h4 id="cisco">Cisco<a class="headerlink" href="#cisco" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Aunque el enrutamiento estático no realiza sumarización automática de rutas, es posible verificar cómo lo implementaría un router de ‘Cisco Systems’ utilizando herramientas como ‘Cisco Packet Tracer’.  </li>
-<li>Basta con configurar manualmente el mapa de red, añadir las rutas necesarias y ejecutar el comando <code>show ip route</code> desde el modo de configuración privilegiado.  </li>
-<li>Esto permitirá observar directamente la tabla de enrutamiento generada y confirmar su correcta implementación.</li>
-</ul>
-<p><img alt="alt text" src="image-3.png" /></p>
-<p><strong>Figura 4.</strong> Ejecución del comando <code>show ip route</code> desde el modo de configuración privilegiado de '<strong>Router2</strong>'</p>
-<div class="admonition note">
-<p class="admonition-title"><strong>NOTA</strong></p>
-<p><span style="font-size: 1.2em;">Como vemos, el dispositivo <b>Router2</b> no sumariza las rutas y todas se mantienen en la tabla de enrutamiento. Por tanto, podrían ponerse todas las rutas, sobre todo si hay que indicar el número de saltos para llegar a cada una de ellas (métrica)</span></p>
-</div>
-<h5 id="tabla-con-metrica">Tabla con métrica<a class="headerlink" href="#tabla-con-metrica" title="Permanent link">&para;</a></h5>
-<table>
-<thead>
-<tr>
-<th>Red destino</th>
-<th>Máscara</th>
-<th>Siguiente</th>
-<th>Interface</th>
-<th>Métrica</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10.100.2.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>0</td>
-</tr>
-<tr>
-<td>10.100.5.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Fa0/0: 10.100.5.2</td>
-<td>0</td>
-</tr>
-<tr>
-<td>10.100.1.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>172.16.100.0</td>
-<td>255.255.255.0</td>
-<td>10.100.5.4</td>
-<td>Fa0/0: 10.100.5.2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>172.16.101.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>2</td>
-</tr>
-<tr>
-<td>172.16.10.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>172.16.20.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-<td>&gt;0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Figura 5.</strong> Tabla de enrutamiento del dispositivo ‘Router2’ sin sumarización de rutas y con información de métrica</p>
-<h5 id="tabla-ordenada">Tabla ordenada<a class="headerlink" href="#tabla-ordenada" title="Permanent link">&para;</a></h5>
-<p>Si queremos que la solución se parezca aún más a la que haría un router de ‘Cisco Systems’, podríamos ordenar alfabéticamente las rutas y dejar la salida por defecto en último lugar como se muestra en la figura siguiente:</p>
-<table>
-<thead>
-<tr>
-<th>Red destino</th>
-<th>Máscara</th>
-<th>Siguiente</th>
-<th>Interface</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10.100.1.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>10.100.2.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>10.100.5.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>172.16.10.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>172.16.20.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>172.16.100.0</td>
-<td>255.255.255.0</td>
-<td>10.100.5.4</td>
-<td>Fa0/0: 10.100.5.2</td>
-</tr>
-<tr>
-<td>172.16.101.0</td>
-<td>255.255.255.0</td>
-<td>10.100.2.3</td>
-<td>Se0/0: 10.100.2.2</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>10</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+#### Tabla de rutas estático
+
+| Red destino   | Máscara         | Siguiente     | Interface            |
+|---------------|-----------------|---------------|----------------------|
+| 10.100.2.0    | 255.255.255.0   | * (Directo)   | Se0/0: 10.100.2.2    |
+| 10.100.5.0    | 255.255.255.0   | * (Directo)   | Fa0/0: 10.100.5.2    |
+| 10.100.1.0    | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 172.16.100.0  | 255.255.255.0   | 10.100.5.4    | Fa0/0: 10.100.5.2    |
+| 172.16.101.0  | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 172.16.10.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 172.16.20.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 0.0.0.0       | 0.0.0.0         | 10.100.2.3    | Se0/0: 10.100.2.2    |
+
+
+Como se observa en la solución de la página anterior, la red destino `81.2.5.0` no ha sido incluida en la tabla de enrutamiento. Esto se debe a que es una red pública en el ámbito de Internet, según lo especificado en el [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918). Por lo tanto, su tráfico será procesado utilizando la ruta por defecto (`0.0.0.0`).
+
+Es importante destacar que los destinos `10.100.1.0`, `172.16.101.0`, `172.16.10.0`, `172.16.20.0` y `81.2.5.0` son alcanzados a través de la dirección IPv4 `10.100.2.3`, que corresponde a la interfaz `Se0/0/0` del dispositivo `Router3`.
+
+#### Enrutamiento dinámico
+
+Si el enrutamiento fuera dinámico, utilizando un protocolo de enrutamiento interior como `Routing Information Protocol` (RIP), `Enhanced Interior Gateway Routing Protocol` (EIGRP) o `Open Shortest Path First` (OSPF), y no se desactivara la función de sumarización de rutas mediante el comando `no auto-summary` (habilitado por defecto), el dispositivo `Router2` resumiría todas estas rutas. En ese caso, la tabla de enrutamiento quedaría de la siguiente manera:
+
+##### Tabla de enrutamiento del dispositivo ‘Router2’ con sumarización de rutas:
+
+| Red destino   | Máscara         | Siguiente     | Interface            |
+|---------------|-----------------|---------------|----------------------|
+| 10.100.2.0    | 255.255.255.0   | * (Directo)   | Se0/0: 10.100.2.2    |
+| 10.100.5.0    | 255.255.255.0   | * (Directo)   | Fa0/0: 10.100.5.2    |
+| 172.16.100.0  | 255.255.255.0   | 10.100.5.4    | Fa0/0: 10.100.5.2    |
+| 0.0.0.0       | 0.0.0.0         | 10.100.2.3    | Se0/0: 10.100.2.2    |
+
+#### Cisco
+
+- Aunque el enrutamiento estático no realiza sumarización automática de rutas, es posible verificar cómo lo implementaría un router de ‘Cisco Systems’ utilizando herramientas como ‘Cisco Packet Tracer’.  
+- Basta con configurar manualmente el mapa de red, añadir las rutas necesarias y ejecutar el comando `show ip route` desde el modo de configuración privilegiado.  
+- Esto permitirá observar directamente la tabla de enrutamiento generada y confirmar su correcta implementación.
+
+![alt text](image-3.png)
+
+**Figura 4.** Ejecución del comando `show ip route` desde el modo de configuración privilegiado de '**Router2**'
+
+!!! note "**NOTA**"
+    <span style="font-size: 1.2em;">Como vemos, el dispositivo <b>Router2</b> no sumariza las rutas y todas se mantienen en la tabla de enrutamiento. Por tanto, podrían ponerse todas las rutas, sobre todo si hay que indicar el número de saltos para llegar a cada una de ellas (métrica)</span>
+
+
+##### Tabla con métrica
+
+| Red destino   | Máscara         | Siguiente     | Interface            | Métrica |
+|---------------|-----------------|---------------|----------------------|---------|
+| 10.100.2.0    | 255.255.255.0   | * (Directo)   | Se0/0: 10.100.2.2    | 0       |
+| 10.100.5.0    | 255.255.255.0   | * (Directo)   | Fa0/0: 10.100.5.2    | 0       |
+| 10.100.1.0    | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    | 1       |
+| 172.16.100.0  | 255.255.255.0   | 10.100.5.4    | Fa0/0: 10.100.5.2    | 1       |
+| 172.16.101.0  | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    | 2       |
+| 172.16.10.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    | 1       |
+| 172.16.20.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    | 1       |
+| 0.0.0.0       | 0.0.0.0         | 10.100.2.3    | Se0/0: 10.100.2.2    | >0      |
+
+**Figura 5.** Tabla de enrutamiento del dispositivo ‘Router2’ sin sumarización de rutas y con información de métrica
+
+##### Tabla ordenada
+
+Si queremos que la solución se parezca aún más a la que haría un router de ‘Cisco Systems’, podríamos ordenar alfabéticamente las rutas y dejar la salida por defecto en último lugar como se muestra en la figura siguiente:
+
+| Red destino   | Máscara         | Siguiente     | Interface            |
+|---------------|-----------------|---------------|----------------------|
+| 10.100.1.0    | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 10.100.2.0    | 255.255.255.0   | * (Directo)   | Se0/0: 10.100.2.2    |
+| 10.100.5.0    | 255.255.255.0   | * (Directo)   | Fa0/0: 10.100.5.2    |
+| 172.16.10.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 172.16.20.0   | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 172.16.100.0  | 255.255.255.0   | 10.100.5.4    | Fa0/0: 10.100.5.2    |
+| 172.16.101.0  | 255.255.255.0   | 10.100.2.3    | Se0/0: 10.100.2.2    |
+| 0.0.0.0       | 0.0.0.0         | 10 -->
 
 
 
