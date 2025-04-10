@@ -427,6 +427,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabla-de-rutas-estaticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla de rutas estáticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrutamiento-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento dinámico
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -541,6 +583,138 @@
 <span class="linenos" data-linenos=" 9 "></span><span class="c1"># Eliminar ruta</span>
 <span class="linenos" data-linenos="10 "></span>ip<span class="w"> </span>route<span class="w"> </span>del<span class="w"> </span><span class="m">192</span>.168.2.0/24
 </code></pre></div>
+<h2 id="ejemplo">Ejemplo<a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Indica la tabla de rutas del <strong>Router3</strong> para que toda la red se comunique correctamente.</li>
+<li>Considera que las direcciones IP de cada interfaz están dentro del rango de la red a la que están conectadas.</li>
+<li>Si se necesita asignar alguna IP, hazlo directamente sobre el mapa de red:</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+    A[Router1] --&gt;|10.100.2.0/24| B[Router2]
+    B --&gt;|10.100.5.0/24| C[Router3]
+    B --&gt;|172.16.100.0/24| D[Network1]
+    C --&gt;|172.16.101.0/24| E[Network2]
+    C --&gt;|172.16.10.0/24| F[Network3]
+    C --&gt;|172.16.20.0/24| G[Network4]
+    C --&gt;|0.0.0.0/0| H[Internet]</code></pre>
+<h3 id="tabla-de-rutas-estaticas">Tabla de rutas estáticas<a class="headerlink" href="#tabla-de-rutas-estaticas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Red destino</th>
+<th>Máscara</th>
+<th>Siguiente Salto</th>
+<th>Interfaz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.30.0</td>
+<td>255.255.255.0</td>
+<td>* (Directo)</td>
+<td>G0/1: 192.168.30.1</td>
+</tr>
+<tr>
+<td>10.0.0.0</td>
+<td>255.255.255.0</td>
+<td>* (Directo)</td>
+<td>S0/0/0: 10.0.0.2</td>
+</tr>
+<tr>
+<td>172.16.0.0</td>
+<td>255.255.255.0</td>
+<td>10.0.0.1</td>
+<td>S0/0/0: 10.0.0.2</td>
+</tr>
+<tr>
+<td>192.168.10.0</td>
+<td>255.255.255.0</td>
+<td>10.0.0.1</td>
+<td>S0/0/0: 10.0.0.2</td>
+</tr>
+<tr>
+<td>192.168.20.0</td>
+<td>255.255.255.0</td>
+<td>10.0.0.1</td>
+<td>S0/0/0: 10.0.0.2</td>
+</tr>
+<tr>
+<td>0.0.0.0</td>
+<td>0.0.0.0</td>
+<td>10.0.0.1</td>
+<td>S0/0/0: 10.0.0.2</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso, Router3 tiene conexión directa con las redes 192.168.30.0/24 y 10.0.0.0/24. El resto de redes se alcanzan a través del salto siguiente <code>10.0.0.1</code>, correspondiente a la interfaz de Router2.</p>
+<h2 id="enrutamiento-dinamico">Enrutamiento dinámico<a class="headerlink" href="#enrutamiento-dinamico" title="Permanent link">&para;</a></h2>
+<p>Si Router3 usara un protocolo de enrutamiento dinámico como OSPF o EIGRP, y las redes estuvieran bien anunciadas, la tabla se generaría automáticamente. Aun así, con OSPF podríamos ver una tabla similar a:</p>
+<p><strong>Tabla de enrutamiento de Router3 (OSPF):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Red destino</th>
+<th>Máscara</th>
+<th>Tipo</th>
+<th>Siguiente</th>
+<th>Métrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.30.0</td>
+<td>255.255.255.0</td>
+<td>Directo</td>
+<td>*</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.0.0.0</td>
+<td>255.255.255.0</td>
+<td>Directo</td>
+<td>*</td>
+<td>0</td>
+</tr>
+<tr>
+<td>172.16.0.0</td>
+<td>255.255.255.0</td>
+<td>OSPF (IA)</td>
+<td>10.0.0.1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>192.168.10.0</td>
+<td>255.255.255.0</td>
+<td>OSPF (IA)</td>
+<td>10.0.0.1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>192.168.20.0</td>
+<td>255.255.255.0</td>
+<td>OSPF (IA)</td>
+<td>10.0.0.1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>0.0.0.0</td>
+<td>0.0.0.0</td>
+<td>OSPF (E2)</td>
+<td>10.0.0.1</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><strong>NOTA</strong></p>
+<p><span style="font-size: 1.2em;">Como se observa, al usar OSPF el router ya no necesita introducir rutas manuales. Además, la métrica (coste) es calculada automáticamente por el protocolo en función del ancho de banda de los enlaces.</span></p>
+</div>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Con enrutamiento <strong>estático</strong>, Router3 requiere todas las rutas de forma explícita.</li>
+<li>Con enrutamiento <strong>dinámico</strong>, el router puede construir su tabla automáticamente, facilitando la escalabilidad.</li>
+<li>En ambos casos, es importante tener al menos una <strong>ruta por defecto</strong> (0.0.0.0/0) para garantizar salida a Internet o redes desconocidas.</li>
+</ul>
 <!-- ## Ejemplo
 
 - Indica la tabla de rutas del Router2 para que todo el sistema se comunique correctamente.  
