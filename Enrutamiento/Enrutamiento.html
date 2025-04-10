@@ -446,12 +446,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#enrutamiento-dinamico" class="md-nav__link">
     <span class="md-ellipsis">
       Enrutamiento dinámico
@@ -459,13 +454,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusión
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -647,7 +647,7 @@
 </tbody>
 </table>
 <p>En este caso, Router3 tiene conexión directa con las redes 192.168.30.0/24 y 10.0.0.0/24. El resto de redes se alcanzan a través del salto siguiente <code>10.0.0.1</code>, correspondiente a la interfaz de Router2.</p>
-<h2 id="enrutamiento-dinamico">Enrutamiento dinámico<a class="headerlink" href="#enrutamiento-dinamico" title="Permanent link">&para;</a></h2>
+<h3 id="enrutamiento-dinamico">Enrutamiento dinámico<a class="headerlink" href="#enrutamiento-dinamico" title="Permanent link">&para;</a></h3>
 <p>Si Router3 usara un protocolo de enrutamiento dinámico como OSPF o EIGRP, y las redes estuvieran bien anunciadas, la tabla se generaría automáticamente. Aun así, con OSPF podríamos ver una tabla similar a:</p>
 <p><strong>Tabla de enrutamiento de Router3 (OSPF):</strong></p>
 <table>
@@ -709,7 +709,7 @@
 <p class="admonition-title"><strong>NOTA</strong></p>
 <p><span style="font-size: 1.2em;">Como se observa, al usar OSPF el router ya no necesita introducir rutas manuales. Además, la métrica (coste) es calculada automáticamente por el protocolo en función del ancho de banda de los enlaces.</span></p>
 </div>
-<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<h3 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Con enrutamiento <strong>estático</strong>, Router3 requiere todas las rutas de forma explícita.</li>
 <li>Con enrutamiento <strong>dinámico</strong>, el router puede construir su tabla automáticamente, facilitando la escalabilidad.</li>
