@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/Enrutamiento/Enrutamiento.html">
+        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/ARP/ARP.html">
       
       
-        <link rel="prev" href="../IPv6/IPv6.html">
+        <link rel="prev" href="../Enrutamiento/Enrutamiento.html">
       
-      
-        <link rel="next" href="../ARP/ARP.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Enrutamiento - Práctico de Redes</title>
+        <title>ARP - Práctico de Redes</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enrutamiento-ipv4" class="md-skip">
+        <a href="#arp-address-resolution-protocol" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enrutamiento
+              ARP
             
           </span>
         </div>
@@ -288,6 +286,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enrutamiento/Enrutamiento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enrutamiento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -304,18 +322,18 @@
           
   
   <span class="md-ellipsis">
-    Enrutamiento
+    ARP
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="Enrutamiento.html" class="md-nav__link md-nav__link--active">
+      <a href="ARP.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Enrutamiento
+    ARP
   </span>
   
 
@@ -337,28 +355,100 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tipos-de-enrutamiento" class="md-nav__link">
+  <a href="#que-es-arp" class="md-nav__link">
     <span class="md-ellipsis">
-      Tipos de enrutamiento
+      ¿Qué es ARP?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tipos de enrutamiento">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-de-arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características de ARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funciones-de-arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funciones de ARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de ARP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-de-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de funcionamiento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-arp-comunicacion-entre-pc-y-portatil2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📡 Ejercicio ARP – Comunicación entre PC y Portátil2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-pc-portatil2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Paso 1: PC → Portátil2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔁 Paso 1: PC → Portátil2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#estatico" class="md-nav__link">
+  <a href="#arp-request-pc-pregunta-por-la-mac-de-portatil2" class="md-nav__link">
     <span class="md-ellipsis">
-      Estático
+      ARP Request (PC pregunta por la MAC de Portátil2)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dinamico" class="md-nav__link">
+  <a href="#arp-reply-portatil2-responde-con-su-mac" class="md-nav__link">
     <span class="md-ellipsis">
-      Dinámico
+      ARP Reply (Portátil2 responde con su MAC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trama-ip-pc-envia-datos-a-portatil2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trama IP (PC envía datos a Portátil2)
     </span>
   </a>
   
@@ -370,55 +460,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tabla-de-enrutamiento" class="md-nav__link">
+  <a href="#paso-2-portatil2-pc" class="md-nav__link">
     <span class="md-ellipsis">
-      Tabla de enrutamiento
+      🔁 Paso 2: Portátil2 → PC
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proceso-de-enrutamiento" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proceso de enrutamiento
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enrutamiento-por-defecto-default-route" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enrutamiento por defecto (default route)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protocolos-de-enrutamiento-interior-y-exterior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Protocolos de enrutamiento interior y exterior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comandos-basicos-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comandos básicos (Linux)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Comandos básicos (Linux)">
+    <nav class="md-nav" aria-label="🔁 Paso 2: Portátil2 → PC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mostrar-tabla-de-enrutamiento" class="md-nav__link">
+  <a href="#arp-request-portatil2-pregunta-por-la-mac-de-pc" class="md-nav__link">
     <span class="md-ellipsis">
-      Mostrar tabla de enrutamiento
+      ARP Request (Portátil2 pregunta por la MAC de PC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp-reply-pc-responde-con-su-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP Reply (PC responde con su MAC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trama-ip-portatil2-responde-al-mensaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trama IP (Portátil2 responde al mensaje)
     </span>
   </a>
   
@@ -430,44 +502,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejemplo" class="md-nav__link">
+  <a href="#notas" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejemplo
+      🧠 Notas
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Ejemplo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tabla-de-rutas-estaticas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tabla de rutas estáticas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enrutamiento-dinamico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enrutamiento dinámico
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -475,26 +514,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ARP/ARP.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ARP
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -514,228 +533,167 @@
                   
 
 
-<h1 id="enrutamiento-ipv4"><strong>Enrutamiento IPv4</strong><a class="headerlink" href="#enrutamiento-ipv4" title="Permanent link">&para;</a></h1>
-<p>El <strong>enrutamiento</strong> es el proceso mediante el cual se determina la mejor ruta que deben seguir los paquetes de datos para llegar desde un origen a un destino en una red IP. En redes IPv4, este proceso es fundamental para la <strong>interconexión de redes</strong> y para el funcionamiento de Internet.</p>
-<h2 id="tipos-de-enrutamiento"><strong>Tipos de enrutamiento</strong><a class="headerlink" href="#tipos-de-enrutamiento" title="Permanent link">&para;</a></h2>
-<h3 id="estatico"><strong>Estático</strong><a class="headerlink" href="#estatico" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Configurado manualmente por el administrador de red.</li>
-<li>Útil en redes pequeñas o topologías sencillas.</li>
-<li><strong>Ventajas:</strong><ul>
-<li>Bajo consumo de recursos.</li>
-<li>Mayor control sobre las rutas.</li>
-</ul>
-</li>
-<li><strong>Inconvenientes:</strong><ul>
-<li>No se adapta automáticamente a cambios en la red.</li>
-<li>Escalabilidad limitada.</li>
-</ul>
-</li>
-</ul>
-<h3 id="dinamico"><strong>Dinámico</strong><a class="headerlink" href="#dinamico" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Utiliza <strong>protocolos de enrutamiento</strong> para intercambiar información de rutas entre routers.</li>
-<li>Se adapta automáticamente a cambios en la topología.</li>
-<li><strong>Protocolos más comunes:</strong><ul>
-<li><strong>RIP (Routing Information Protocol):</strong> basado en distancia (nº de saltos).</li>
-<li><strong>OSPF (Open Shortest Path First):</strong> basado en el coste (estado de enlace).</li>
-<li><strong>EIGRP (Enhanced Interior Gateway Routing Protocol):</strong> híbrido (propietario de Cisco).</li>
-<li><strong>BGP (Border Gateway Protocol):</strong> utilizado entre sistemas autónomos (routing interdomain).</li>
-</ul>
-</li>
-</ul>
-<h2 id="tabla-de-enrutamiento"><strong>Tabla de enrutamiento</strong><a class="headerlink" href="#tabla-de-enrutamiento" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Estructura que contiene las rutas conocidas por un router.</li>
-<li>Cada entrada incluye:<ul>
-<li>Dirección de red destino.</li>
-<li>Máscara de subred.</li>
-<li>Dirección del siguiente salto (next hop).</li>
-<li>Interfaz de salida.</li>
-<li>Métrica (coste asociado a la ruta).</li>
-</ul>
-</li>
-</ul>
-<h2 id="proceso-de-enrutamiento"><strong>Proceso de enrutamiento</strong><a class="headerlink" href="#proceso-de-enrutamiento" title="Permanent link">&para;</a></h2>
+<h1 id="arp-address-resolution-protocol"><strong>ARP (Address Resolution Protocol)</strong><a class="headerlink" href="#arp-address-resolution-protocol" title="Permanent link">&para;</a></h1>
+<h2 id="que-es-arp"><strong>¿Qué es ARP?</strong><a class="headerlink" href="#que-es-arp" title="Permanent link">&para;</a></h2>
+<p>ARP es un protocolo de capa de red (nivel 3 OSI) que permite a un host obtener la dirección MAC (capa 2) asociada a una dirección IP dentro de una red local (LAN).</p>
+<h2 id="caracteristicas-de-arp"><strong>Características de ARP</strong><a class="headerlink" href="#caracteristicas-de-arp" title="Permanent link">&para;</a></h2>
 <ol>
-<li>El router recibe un paquete IP.</li>
-<li>Consulta la tabla de enrutamiento.</li>
-<li>Selecciona la mejor ruta (longitud de prefijo más específica).</li>
-<li>Reenvía el paquete a través de la interfaz correspondiente.</li>
+<li><strong>Protocolo de Capa de Enlace</strong>: ARP opera en la capa de enlace de datos del modelo OSI.</li>
+<li><strong>Mapeo de Direcciones</strong>: Su función principal es mapear direcciones IP (lógicas) a direcciones MAC (físicas).</li>
+<li><strong>Mensajes ARP</strong>: Utiliza dos tipos de mensajes: solicitudes ARP (ARP Request) y respuestas ARP (ARP Reply).</li>
 </ol>
-<h2 id="enrutamiento-por-defecto-default-route"><strong>Enrutamiento por defecto (default route)</strong><a class="headerlink" href="#enrutamiento-por-defecto-default-route" title="Permanent link">&para;</a></h2>
+<h2 id="funciones-de-arp"><strong>Funciones de ARP</strong><a class="headerlink" href="#funciones-de-arp" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Resolución de Direcciones</strong>: ARP permite que un dispositivo en una red local descubra la dirección MAC de otro dispositivo a partir de su dirección IP.</li>
+<li><strong>Actualización de Caché</strong>: Mantiene una caché ARP donde almacena temporalmente las direcciones IP y MAC mapeadas para reducir la necesidad de enviar solicitudes repetidas.</li>
+<li><strong>Comunicación Local</strong>: Facilita la comunicación entre dispositivos en la misma red local (LAN) al asegurar que los paquetes de datos se envíen a la dirección MAC correcta.</li>
+</ol>
+<h2 id="proceso-de-arp"><strong>Proceso de ARP</strong><a class="headerlink" href="#proceso-de-arp" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Solicitud ARP</strong>: Cuando un dispositivo necesita conocer la dirección MAC de otro dispositivo, envía una solicitud ARP a la red.</li>
+<li><strong>Respuesta ARP</strong>: El dispositivo con la dirección IP correspondiente responde con su dirección MAC.</li>
+<li><strong>Actualización de Caché</strong>: La dirección MAC recibida se almacena en la caché ARP del dispositivo solicitante.</li>
+</ol>
+<h2 id="seguridad"><strong>Seguridad</strong><a class="headerlink" href="#seguridad" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ruta utilizada cuando no hay coincidencia más específica en la tabla.</li>
-<li>Se configura con la red <code>0.0.0.0/0</code>.</li>
+<li><strong>ARP Spoofing</strong>: Una vulnerabilidad donde un atacante envía mensajes ARP falsificados para interceptar o redirigir el tráfico de red.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.1.1
-</code></pre></div>
-<h2 id="protocolos-de-enrutamiento-interior-y-exterior"><strong>Protocolos de enrutamiento interior y exterior</strong><a class="headerlink" href="#protocolos-de-enrutamiento-interior-y-exterior" title="Permanent link">&para;</a></h2>
+<h2 id="ejemplos-de-funcionamiento">Ejemplos de funcionamiento<a class="headerlink" href="#ejemplos-de-funcionamiento" title="Permanent link">&para;</a></h2>
+<p>Cuando una máquina necesita comunicarse con otra en una red, necesita conocer en primera instancia su IP para poder enviar el paquete a su destino, pero en la capa 2 del modelo OSI, utiliza direcciones MAC. El protocolo ARP entra en juego en este momento, dado que envía los mensajes pertinentes para averiguar la dirección MAC asociada a una IP concreta.</p>
+<p><img alt="alt text" src="arp.gif" /></p>
+<p>Cuando un dispositivo desea enviar paquetes a otro, lanza un mensaje broadcast ARP preguntando en la red qué dispositivo posee esa IP concreta y esperando una respuesta únicamente de ese dispositivo identificándose y, además, enviando su MAC.</p>
+<p><img alt="alt text" src="arp2.gif" /></p>
+<p>De esta forma, los dispositivos en la red van construyendo sus tablas ARP, donde cada entrada hace corresponder una IP con su MAC, de tal forma que si tuvieran que volver a enviar mensajes a esas máquinas, ya no necesitan pasar por el proceso de averiguación de direcciones MAC.</p>
+<h2 id="ejercicio-arp-comunicacion-entre-pc-y-portatil2">📡 Ejercicio ARP – Comunicación entre PC y Portátil2<a class="headerlink" href="#ejercicio-arp-comunicacion-entre-pc-y-portatil2" title="Permanent link">&para;</a></h2>
+<p>Supuesto: Las tablas ARP y MAC están vacías, pero todos los dispositivos tienen IP asignada correctamente. Se desea enviar un mensaje desde <strong>PC</strong> a <strong>Portátil2</strong>, ambos en la misma red.</p>
+<hr />
+<h2 id="paso-1-pc-portatil2">🔁 Paso 1: PC → Portátil2<a class="headerlink" href="#paso-1-pc-portatil2" title="Permanent link">&para;</a></h2>
+<h3 id="arp-request-pc-pregunta-por-la-mac-de-portatil2">ARP Request (PC pregunta por la MAC de Portátil2)<a class="headerlink" href="#arp-request-pc-pregunta-por-la-mac-de-portatil2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th><strong>Tipo</strong></th>
-<th><strong>Protocolos</strong></th>
-<th><strong>Ámbito</strong></th>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>IGP (Interior Gateway Protocol)</strong></td>
-<td>RIP, OSPF, EIGRP</td>
-<td>Dentro de un sistema autónomo</td>
-</tr>
-<tr>
-<td><strong>EGP (Exterior Gateway Protocol)</strong></td>
-<td>BGP</td>
-<td>Entre sistemas autónomos</td>
+<td>MAC de PC</td>
+<td>FF:FF:FF:FF:FF:FF (Broadcast)</td>
+<td>IP de PC</td>
+<td>IP de Portátil2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="comandos-basicos-linux"><strong>Comandos básicos (Linux)</strong><a class="headerlink" href="#comandos-basicos-linux" title="Permanent link">&para;</a></h2>
-<h3 id="mostrar-tabla-de-enrutamiento"><strong>Mostrar tabla de enrutamiento</strong><a class="headerlink" href="#mostrar-tabla-de-enrutamiento" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>ip<span class="w"> </span>route<span class="w"> </span>show
-<span class="linenos" data-linenos=" 2 "></span>
-<span class="linenos" data-linenos=" 3 "></span><span class="c1"># Mostrar tabla de enrutamiento</span>
-<span class="linenos" data-linenos=" 4 "></span>ip<span class="w"> </span>route<span class="w"> </span>show
-<span class="linenos" data-linenos=" 5 "></span>
-<span class="linenos" data-linenos=" 6 "></span><span class="c1"># Añadir ruta estática</span>
-<span class="linenos" data-linenos=" 7 "></span>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.2.0/24<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w"> </span>dev<span class="w"> </span>eth0
-<span class="linenos" data-linenos=" 8 "></span>
-<span class="linenos" data-linenos=" 9 "></span><span class="c1"># Eliminar ruta</span>
-<span class="linenos" data-linenos="10 "></span>ip<span class="w"> </span>route<span class="w"> </span>del<span class="w"> </span><span class="m">192</span>.168.2.0/24
-</code></pre></div>
-<h2 id="ejemplo"><strong>Ejemplo</strong><a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="arp-reply-portatil2-responde-con-su-mac">ARP Reply (Portátil2 responde con su MAC)<a class="headerlink" href="#arp-reply-portatil2-responde-con-su-mac" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC de Portátil2</td>
+<td>MAC de PC</td>
+<td>IP de Portátil2</td>
+<td>IP de PC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="trama-ip-pc-envia-datos-a-portatil2">Trama IP (PC envía datos a Portátil2)<a class="headerlink" href="#trama-ip-pc-envia-datos-a-portatil2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC de PC</td>
+<td>MAC de Portátil2</td>
+<td>IP de PC</td>
+<td>IP de Portátil2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="paso-2-portatil2-pc">🔁 Paso 2: Portátil2 → PC<a class="headerlink" href="#paso-2-portatil2-pc" title="Permanent link">&para;</a></h2>
+<h3 id="arp-request-portatil2-pregunta-por-la-mac-de-pc">ARP Request (Portátil2 pregunta por la MAC de PC)<a class="headerlink" href="#arp-request-portatil2-pregunta-por-la-mac-de-pc" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC de Portátil2</td>
+<td>FF:FF:FF:FF:FF:FF (Broadcast)</td>
+<td>IP de Portátil2</td>
+<td>IP de PC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="arp-reply-pc-responde-con-su-mac">ARP Reply (PC responde con su MAC)<a class="headerlink" href="#arp-reply-pc-responde-con-su-mac" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC de PC</td>
+<td>MAC de Portátil2</td>
+<td>IP de PC</td>
+<td>IP de Portátil2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="trama-ip-portatil2-responde-al-mensaje">Trama IP (Portátil2 responde al mensaje)<a class="headerlink" href="#trama-ip-portatil2-responde-al-mensaje" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>MAC Origen</th>
+<th>MAC Destino</th>
+<th>IP Origen</th>
+<th>IP Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC de Portátil2</td>
+<td>MAC de PC</td>
+<td>IP de Portátil2</td>
+<td>IP de PC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="notas">🧠 Notas<a class="headerlink" href="#notas" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Indica la tabla de rutas del <strong>Router3</strong> para que toda la red se comunique correctamente.</li>
-<li>Considera que las direcciones IP de cada interfaz están dentro del rango de la red a la que están conectadas.</li>
-<li>Si se necesita asignar alguna IP, hazlo directamente sobre el mapa de red:</li>
-</ul>
-<pre class="mermaid"><code>graph TD
-    A[Router1] --&gt;|10.100.2.0/24| B[Router2]
-    B --&gt;|10.100.5.0/24| C[Router3]
-    B --&gt;|172.16.100.0/24| D[Network1]
-    C --&gt;|172.16.101.0/24| E[Network2]
-    C --&gt;|172.16.10.0/24| F[Network3]
-    C --&gt;|172.16.20.0/24| G[Network4]
-    C --&gt;|0.0.0.0/0| H[Internet]</code></pre>
-<h3 id="tabla-de-rutas-estaticas"><strong>Tabla de rutas estáticas</strong><a class="headerlink" href="#tabla-de-rutas-estaticas" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><strong>Red destino</strong></th>
-<th><strong>Máscara</strong></th>
-<th><strong>Siguiente Salto</strong></th>
-<th><strong>Interfaz</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>192.168.30.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>G0/1: 192.168.30.1</td>
-</tr>
-<tr>
-<td>10.0.0.0</td>
-<td>255.255.255.0</td>
-<td>* (Directo)</td>
-<td>S0/0/0: 10.0.0.2</td>
-</tr>
-<tr>
-<td>172.16.0.0</td>
-<td>255.255.255.0</td>
-<td>10.0.0.1</td>
-<td>S0/0/0: 10.0.0.2</td>
-</tr>
-<tr>
-<td>192.168.10.0</td>
-<td>255.255.255.0</td>
-<td>10.0.0.1</td>
-<td>S0/0/0: 10.0.0.2</td>
-</tr>
-<tr>
-<td>192.168.20.0</td>
-<td>255.255.255.0</td>
-<td>10.0.0.1</td>
-<td>S0/0/0: 10.0.0.2</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>10.0.0.1</td>
-<td>S0/0/0: 10.0.0.2</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso, Router3 tiene conexión directa con las redes 192.168.30.0/24 y 10.0.0.0/24. El resto de redes se alcanzan a través del salto siguiente <code>10.0.0.1</code>, correspondiente a la interfaz de Router2.</p>
-<h3 id="enrutamiento-dinamico"><strong>Enrutamiento dinámico</strong><a class="headerlink" href="#enrutamiento-dinamico" title="Permanent link">&para;</a></h3>
-<p>Si Router3 usara un protocolo de enrutamiento dinámico como OSPF o EIGRP, y las redes estuvieran bien anunciadas, la tabla se generaría automáticamente. Aun así, con OSPF podríamos ver una tabla similar a:</p>
-<p><strong>Tabla de enrutamiento de Router3 (OSPF):</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>Red destino</strong></th>
-<th><strong>Máscara</strong></th>
-<th><strong>Tipo</strong></th>
-<th><strong>Siguiente</strong></th>
-<th><strong>Métrica</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>192.168.30.0</td>
-<td>255.255.255.0</td>
-<td>Directo</td>
-<td>*</td>
-<td>0</td>
-</tr>
-<tr>
-<td>10.0.0.0</td>
-<td>255.255.255.0</td>
-<td>Directo</td>
-<td>*</td>
-<td>0</td>
-</tr>
-<tr>
-<td>172.16.0.0</td>
-<td>255.255.255.0</td>
-<td>OSPF (IA)</td>
-<td>10.0.0.1</td>
-<td>10</td>
-</tr>
-<tr>
-<td>192.168.10.0</td>
-<td>255.255.255.0</td>
-<td>OSPF (IA)</td>
-<td>10.0.0.1</td>
-<td>10</td>
-</tr>
-<tr>
-<td>192.168.20.0</td>
-<td>255.255.255.0</td>
-<td>OSPF (IA)</td>
-<td>10.0.0.1</td>
-<td>10</td>
-</tr>
-<tr>
-<td>0.0.0.0</td>
-<td>0.0.0.0</td>
-<td>OSPF (E2)</td>
-<td>10.0.0.1</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title"><strong>NOTA</strong></p>
-<p><span style="font-size: 1.2em;">Como se observa, al usar OSPF el router ya no necesita introducir rutas manuales. Además, la métrica (coste) es calculada automáticamente por el protocolo en función del ancho de banda de los enlaces.</span></p>
-</div>
-<h3 id="conclusion"><strong>Conclusión</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Con enrutamiento <strong>estático</strong>, Router3 requiere todas las rutas de forma explícita.</li>
-<li>Con enrutamiento <strong>dinámico</strong>, el router puede construir su tabla automáticamente, facilitando la escalabilidad.</li>
-<li>En ambos casos, es importante tener al menos una <strong>ruta por defecto</strong> (0.0.0.0/0) para garantizar salida a Internet o redes desconocidas.</li>
+<li>Las tablas ARP de ambos dispositivos se actualizan durante el proceso.</li>
+<li>Los switches actualizan sus tablas MAC al recibir tramas con nuevas direcciones.</li>
+<li>El enrutador <strong>no participa</strong>, ya que es una comunicación local (misma subred).</li>
 </ul>
 
 

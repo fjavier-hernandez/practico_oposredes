@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/fjavier-hernandez/practico_oposredes/index.html</loc>
-         <lastmod>2025-04-24</lastmod>
+         <lastmod>2025-05-09</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/fjavier-hernandez/practico_oposredes/ARP/ARP.html</loc>
+         <lastmod>2025-05-09</lastmod>
     </url>
     <url>
          <loc>https://github.com/fjavier-hernandez/practico_oposredes/Enrutamiento/Enrutamiento.html</loc>
-         <lastmod>2025-04-24</lastmod>
+         <lastmod>2025-05-09</lastmod>
     </url>
     <url>
          <loc>https://github.com/fjavier-hernandez/practico_oposredes/IPv6/IPv6.html</loc>
-         <lastmod>2025-04-24</lastmod>
+         <lastmod>2025-05-09</lastmod>
     </url>
     <url>
          <loc>https://github.com/fjavier-hernandez/practico_oposredes/VLSM/VLSM.html</loc>
-         <lastmod>2025-04-24</lastmod>
+         <lastmod>2025-05-09</lastmod>
     </url>
 </urlset>
