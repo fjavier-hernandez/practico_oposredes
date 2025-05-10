@@ -978,17 +978,15 @@ La primera forma que veremos es la más simple. Usamos para ello el módulo de a
 <p><strong>Cómo funciona este método de autentificación</strong></p>
 <p>Cuando desde el cliente intentamos acceder a una URL que esta controlada por el método de autentificación básico:</p>
 <ol>
-<li>
-<p>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>WWW-Authenticate:<span class="w"> </span>Basic<span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;Palabra de paso&quot;</span>
-</code></pre></div>
-</li>
-<li>
-<p>El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Authorization:<span class="w"> </span>Basic<span class="w"> </span>am9zZTpqb3Nl
-</code></pre></div>
-</li>
+<li>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</li>
 </ol>
+<p><code>bash
+    WWW-Authenticate: Basic realm="Palabra de paso"</code></p>
+<ol start="2">
+<li>El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>Authorization:<span class="w"> </span>Basic<span class="w"> </span>am9zZTpqb3Nl
+</code></pre></div>
 <p>En realidad la información que se manda es el nombre de usuario y la contraseña en base 64, que se puede decodificar fácilmente con cualquier <a href="http://www.base64decode.org/">utilidad</a>.</p>
 <h3 id="autentificacion-tipo-digest">Autentificación tipo digest<a class="headerlink" href="#autentificacion-tipo-digest" title="Permanent link">&para;</a></h3>
 <p>La autentificación tipo digest soluciona el problema de la transferencia de contraseñas en claro sin necesidad de usar SSL.  El procedimiento, como veréis, es muy similar al tipo básico pero cambiando algunas de las directivas y usando la utilidad <code>htdigest</code> en lugar de <code>htpassword</code> para crear el fichero de contraseñas. El módulo de autenticación necesario suele venir con Apache pero no habilitado por defecto. Para activarlo usamos la utilidad <code>a2enmod</code> y, a continuación reiniciamos el servidor Apache:</p>
@@ -996,12 +994,12 @@ La primera forma que veremos es la más simple. Usamos para ello el módulo de a
 <span class="linenos" data-linenos="2 "></span>$ /etc/init.d/apache2 restart
 </code></pre></div>
 <p>Luego incluimos una sección como esta en el fichero de configuración de nuestro Virtual Host:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;Directory<span class="w"> </span><span class="s2">&quot;/var/www/miweb/privado&quot;</span>&gt;
-<span class="linenos" data-linenos="2 "></span><span class="w">   </span>AuthType<span class="w"> </span>Digest
-<span class="linenos" data-linenos="3 "></span><span class="w">   </span>AuthName<span class="w"> </span><span class="s2">&quot;dominio&quot;</span>
-<span class="linenos" data-linenos="4 "></span><span class="w">   </span>AuthUserFile<span class="w"> </span><span class="s2">&quot;/etc/claves/digest.txt&quot;</span>
-<span class="linenos" data-linenos="5 "></span><span class="w">   </span>Require<span class="w"> </span>valid-user
-<span class="linenos" data-linenos="6 "></span>&lt;/Directory&gt;
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span>&lt;Directory<span class="w"> </span><span class="s2">&quot;/var/www/miweb/privado&quot;</span>&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">     </span>AuthType<span class="w"> </span>Digest
+<span class="linenos" data-linenos="3 "></span><span class="w">     </span>AuthName<span class="w"> </span><span class="s2">&quot;dominio&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">     </span>AuthUserFile<span class="w"> </span><span class="s2">&quot;/etc/claves/digest.txt&quot;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">     </span>Require<span class="w"> </span>valid-user
+<span class="linenos" data-linenos="6 "></span><span class="w">  </span>&lt;/Directory&gt;
 </code></pre></div>
 <p>Como vemos, es muy similar a la configuración necesaria en la autenticación básica. La directiva <code>AuthName</code> que en la autenticación básica se usaba para mostrar un mensaje en la ventana que pide el usuario y contraseña, ahora se usa también para identificar un nombre de dominio (realm) que debe de coincidir con el que aparezca después en el fichero de contraseñas. Dicho esto, vamos a generar dicho fichero con la utilidad htdigest:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ htdigest -c /etc/claves/digest.txt dominio josemaria
@@ -1016,29 +1014,25 @@ La primera forma que veremos es la más simple. Usamos para ello el módulo de a
 <p><strong>Cómo funciona este método de autentificación</strong></p>
 <p>Cuando desde el cliente intentamos acceder a una URL que esta controlada por el método de autentificación de tipo digest:</p>
 <ol>
-<li>
-<p>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</p>
-<p>```bash
-WWW-Authenticate: Digest realm="dominio", 
-                 nonce="cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485", 
-                 algorithm=MD5, 
-                 qop="auth"</p>
-</li>
-<li>
-<p>El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></p>
-<p>```bash
-Authorization   Digest username="jose", 
-                realm="dominio", 
-                nonce="cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485",
-                uri="/digest/", 
-                algorithm=MD5, 
-                response="814bc0d6644fa1202650e2c404460a21", 
-                qop=auth, 
-                nc=00000001, 
-                cnonce="3da69c14300e446b"</p>
-</li>
+<li>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</li>
 </ol>
-<p>La información que se manda es <em>responde</em> que en este caso esta cifrada usando md5 y que se calcula de la siguiente manera:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>WWW-Authenticate:<span class="w"> </span>Digest<span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;dominio&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                     </span><span class="nv">nonce</span><span class="o">=</span><span class="s2">&quot;cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                     </span><span class="nv">algorithm</span><span class="o">=</span>MD5,<span class="w"> </span>
+<span class="linenos" data-linenos="4 "></span><span class="w">                     </span><span class="nv">qop</span><span class="o">=</span><span class="s2">&quot;auth&quot;</span>
+</code></pre></div>
+2. El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>Authorization<span class="w">   </span>Digest<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;jose&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                    </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;dominio&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                    </span><span class="nv">nonce</span><span class="o">=</span><span class="s2">&quot;cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485&quot;</span>,
+<span class="linenos" data-linenos="4 "></span><span class="w">                    </span><span class="nv">uri</span><span class="o">=</span><span class="s2">&quot;/digest/&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="5 "></span><span class="w">                    </span><span class="nv">algorithm</span><span class="o">=</span>MD5,<span class="w"> </span>
+<span class="linenos" data-linenos="6 "></span><span class="w">                    </span><span class="nv">response</span><span class="o">=</span><span class="s2">&quot;814bc0d6644fa1202650e2c404460a21&quot;</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="7 "></span><span class="w">                    </span><span class="nv">qop</span><span class="o">=</span>auth,<span class="w"> </span>
+<span class="linenos" data-linenos="8 "></span><span class="w">                    </span><span class="nv">nc</span><span class="o">=</span><span class="m">00000001</span>,<span class="w"> </span>
+<span class="linenos" data-linenos="9 "></span><span class="w">                    </span><span class="nv">cnonce</span><span class="o">=</span><span class="s2">&quot;3da69c14300e446b&quot;</span>
+</code></pre></div>
+La información que se manda es <em>responde</em> que en este caso esta cifrada usando md5 y que se calcula de la siguiente manera:</p>
 <ul>
 <li>Se calcula el md5 del nombre de usuario, del dominio (realm) y la contraseña, la llamamos HA1.</li>
 <li>Se calcula el md5 del método de la petición (por ejemplo GET) y de la uri a la que estamos accediendo, la llamamos HA2.</li>
