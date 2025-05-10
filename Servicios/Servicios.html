@@ -1,0 +1,1178 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/Servicios/Servicios.html">
+      
+      
+        <link rel="prev" href="../ARP/ARP.html">
+      
+      
+        <link rel="next" href="../Seguridad/Seguridad.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Servicios - Práctico de Redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#servicios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../index.html" title="Práctico de Redes" class="md-header__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Práctico de Redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Servicios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="javi" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Práctico de Redes" class="md-nav__button md-logo" aria-label="Práctico de Redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Práctico de Redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VLSM/VLSM.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VLSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPv6/IPv6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPv6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enrutamiento/Enrutamiento.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enrutamiento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARP/ARP.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Servicios
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Servicios.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Servicios
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dhcp-instalacion-y-configuracion-de-servidor-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP: Instalación y configuración de servidor DHCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DHCP: Instalación y configuración de servidor DHCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-servidor-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es un servidor DHCP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes clave
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros de configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprobaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-reservada" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Reservada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-servidor-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Servidor DHCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-configuracion-de-servidor-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de configuración de servidor DHCP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-con-bind9" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS con BIND9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion-de-apache-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación de Apache 2.4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-los-ficheros-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de los ficheros de configuración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-al-virtualhosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción al VirtualHosting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción al VirtualHosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-virtualhosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de VirtualHosting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapear-url-a-ubicaciones-de-un-sistema-de-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapear URL a ubicaciones de un sistema de ficheros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control de acceso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autentificacion-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autentificación básica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Autentificación básica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autentificacion-tipo-digest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autentificación tipo digest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Seguridad/Seguridad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seguridad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="servicios"><strong>Servicios</strong><a class="headerlink" href="#servicios" title="Permanent link">&para;</a></h1>
+<p>Para oposiciones se destacan los servicios de DHCP, DNS y APache</p>
+<h2 id="dhcp-instalacion-y-configuracion-de-servidor-dhcp"><strong>DHCP: Instalación y configuración de servidor DHCP</strong><a class="headerlink" href="#dhcp-instalacion-y-configuracion-de-servidor-dhcp" title="Permanent link">&para;</a></h2>
+<h3 id="que-es-un-servidor-dhcp"><strong>¿Qué es un servidor DHCP?</strong><a class="headerlink" href="#que-es-un-servidor-dhcp" title="Permanent link">&para;</a></h3>
+<p>DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que permite a los dispositivos obtener automáticamente una configuración IP válida para comunicarse en una red. Esto incluye:</p>
+<ul>
+<li>Dirección IP</li>
+<li>Máscara de subred</li>
+<li>Puerta de enlace (gateway)</li>
+<li>Servidores DNS</li>
+</ul>
+<h3 id="componentes-clave"><strong>Componentes clave</strong><a class="headerlink" href="#componentes-clave" title="Permanent link">&para;</a></h3>
+<h4 id="1-cliente-dhcp"><strong>1. Cliente DHCP</strong><a class="headerlink" href="#1-cliente-dhcp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Debe estar configurado para obtener la IP automáticamente (no estática).</li>
+<li>Se modifica el archivo de configuración de red (<code>/etc/netplan</code>) para activar DHCP.</li>
+<li>Se aplica la configuración con <code>netplan apply</code>.</li>
+</ul>
+<h4 id="2-servidor-dhcp"><strong>2. Servidor DHCP</strong><a class="headerlink" href="#2-servidor-dhcp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Se instala el paquete <code>isc-dhcp-server</code>.</li>
+<li>Se especifica la interfaz de red que usará para asignar IPs (por ejemplo, <code>enp0s8</code>).</li>
+<li>Se edita el archivo <code>/etc/default/isc-dhcp-server</code> para indicar la interfaz.</li>
+<li>La configuración principal se realiza en <code>/etc/dhcp/dhcpd.conf</code>.</li>
+</ul>
+<h3 id="parametros-de-configuracion"><strong>Parámetros de configuración</strong><a class="headerlink" href="#parametros-de-configuracion" title="Permanent link">&para;</a></h3>
+<p>En el archivo <code>dhcpd.conf</code> se definen:
+- <strong>Rango de IPs</strong>: desde <code>X.X.X.3</code> hasta <code>X.X.X.10</code>.
+- <strong>Puerta de enlace</strong>: dirección del gateway.
+- <strong>Servidores DNS</strong>: <code>1.1.1.1</code> y <code>8.8.8.8</code>.</p>
+<h3 id="comprobaciones"><strong>Comprobaciones</strong><a class="headerlink" href="#comprobaciones" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Validar la configuración con <code>dhcpd -t</code>.</li>
+<li>Reiniciar el servicio con <code>sudo systemctl restart isc-dhcp-server</code>.</li>
+<li>Verificar en el cliente que ha recibido una IP dentro del rango.</li>
+<li>Comprobar la ruta por defecto con <code>ip route</code>.</li>
+</ul>
+<h3 id="ip-reservada"><strong>IP Reservada</strong><a class="headerlink" href="#ip-reservada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se puede reservar una IP fija para un cliente específico usando su dirección MAC.</li>
+<li>Se añade una entrada <code>host</code> en <code>dhcpd.conf</code> dentro del bloque <code>subnet</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>host cliente-reservado {
+<span class="linenos" data-linenos="2 "></span>    hardware ethernet XX:XX:XX:XX:XX:XX;
+<span class="linenos" data-linenos="3 "></span>    fixed-address X.X.X.11;
+<span class="linenos" data-linenos="4 "></span>}
+</code></pre></div>
+<h3 id="configuracion-de-servidor-dhcp"><strong>Configuración de Servidor DHCP</strong><a class="headerlink" href="#configuracion-de-servidor-dhcp" title="Permanent link">&para;</a></h3>
+<p>Como <strong>administrador/a de sistemas</strong> en una empresa con varias sedes interconectadas, se te asigna la tarea de configurar un servidor <strong>DHCP</strong> en la sede principal (<strong>Madrid</strong>) para que asigne direcciones IP automáticamente a los dispositivos de la red local.</p>
+<h4 id="requisitos"><strong>Requisitos</strong><a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h4>
+<ol>
+<li>La red de partida es <strong><code>192.168.10.0/24</code></strong>.</li>
+<li>Se deben reservar las siguientes <strong>IPs</strong>:<ul>
+<li><strong><code>.1</code></strong> para el router de salida.</li>
+<li><strong><code>.2</code></strong> para el servidor DNS interno.</li>
+<li><strong><code>.3</code></strong> para el servidor DHCP.</li>
+</ul>
+</li>
+<li>El rango de <strong>IPs dinámicas</strong> debe ir desde la <strong><code>.10</code></strong> hasta la <strong><code>.100</code></strong>.</li>
+<li>Se debe configurar una <strong>reserva de IP</strong> para una impresora de red con <strong>MAC <code>00:11:22:33:44:55</code></strong>, asignándole la <strong>IP <code>192.168.10.200</code></strong>.</li>
+<li>El servidor <strong>DHCP</strong> debe proporcionar como <strong>puerta de enlace</strong> la <strong>IP <code>192.168.10.1</code></strong> y como <strong>DNS <code>192.168.10.2</code></strong>.</li>
+</ol>
+<h3 id="ejercicio-de-configuracion-de-servidor-dhcp"><strong>Ejercicio de configuración de servidor DHCP</strong><a class="headerlink" href="#ejercicio-de-configuracion-de-servidor-dhcp" title="Permanent link">&para;</a></h3>
+<h4 id="1-que-archivo-se-debe-editar-para-definir-el-rango-de-direcciones-ip-que-asignara-el-servidor-dhcp">1. ¿Qué archivo se debe editar para definir el rango de direcciones IP que asignará el servidor DHCP?<a class="headerlink" href="#1-que-archivo-se-debe-editar-para-definir-el-rango-de-direcciones-ip-que-asignara-el-servidor-dhcp" title="Permanent link">&para;</a></h4>
+<p>El archivo principal de configuración del servidor DHCP en sistemas basados en Debian/Ubuntu es: <code>/etc/dhcp/dhcpd.conf</code></p>
+<p>En este archivo se definen los parámetros de red, el rango de direcciones IP dinámicas, las reservas de IP, los servidores DNS, la puerta de enlace, etc.</p>
+<h4 id="2-que-comando-se-utiliza-para-reiniciar-el-servicio-dhcp-tras-modificar-su-configuracion">2. ¿Qué comando se utiliza para reiniciar el servicio DHCP tras modificar su configuración?<a class="headerlink" href="#2-que-comando-se-utiliza-para-reiniciar-el-servicio-dhcp-tras-modificar-su-configuracion" title="Permanent link">&para;</a></h4>
+<p>Para aplicar los cambios realizados en la configuración del servidor DHCP, se debe reiniciar el servicio con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>isc-dhcp-server
+</code></pre></div>
+<h4 id="3-escribe-el-bloque-de-configuracion-correspondiente-al-archivo-etcdhcpdhcpdconf-que-cumpla-con-los-requisitos-del-enunciado">3. Escribe el bloque de configuración correspondiente al archivo /etc/dhcp/dhcpd.conf que cumpla con los requisitos del enunciado.<a class="headerlink" href="#3-escribe-el-bloque-de-configuracion-correspondiente-al-archivo-etcdhcpdhcpdconf-que-cumpla-con-los-requisitos-del-enunciado" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># Configuración general</span>
+<span class="linenos" data-linenos=" 2 "></span>default-lease-time<span class="w"> </span><span class="m">600</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>max-lease-time<span class="w"> </span><span class="m">7200</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>authoritative<span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1"># Configuración de la subred</span>
+<span class="linenos" data-linenos=" 7 "></span>subnet<span class="w"> </span><span class="m">192</span>.168.10.0<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span><span class="o">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span>range<span class="w"> </span><span class="m">192</span>.168.10.10<span class="w"> </span><span class="m">192</span>.168.10.100<span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span>option<span class="w"> </span>routers<span class="w"> </span><span class="m">192</span>.168.10.1<span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span>option<span class="w"> </span>domain-name-servers<span class="w"> </span><span class="m">192</span>.168.10.2<span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="o">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="c1"># Reserva de IP para impresora de red</span>
+<span class="linenos" data-linenos="14 "></span>host<span class="w"> </span>impresora<span class="w"> </span><span class="o">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">  </span>hardware<span class="w"> </span>ethernet<span class="w"> </span><span class="m">00</span>:11:22:33:44:55<span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span>fixed-address<span class="w"> </span><span class="m">192</span>.168.10.200<span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="o">}</span>
+</code></pre></div>
+<h4 id="4-como-comprobarias-que-un-cliente-ha-recibido-correctamente-una-ip-del-servidor-dhcp">4. ¿Cómo comprobarías que un cliente ha recibido correctamente una IP del servidor DHCP?<a class="headerlink" href="#4-como-comprobarias-que-un-cliente-ha-recibido-correctamente-una-ip-del-servidor-dhcp" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>En el cliente:</strong></p>
+<ul>
+<li>Ejecutar ip a o ip addr para ver la IP asignada.</li>
+<li>Usar ping 192.168.10.1 para comprobar conectividad con la puerta de enlace.</li>
+<li>Verificar la configuración con nmcli o netplan según el sistema.</li>
+</ul>
+</li>
+<li>
+<p><strong>En el servidor:</strong></p>
+<ul>
+<li>Consultar el archivo de concesiones:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>cat<span class="w"> </span>/var/lib/dhcp/dhcpd.leases
+</code></pre></div>
+<h2 id="dns-con-bind9">DNS con BIND9<a class="headerlink" href="#dns-con-bind9" title="Permanent link">&para;</a></h2>
+<p><strong>Archivos de configuración principales</strong></p>
+<ul>
+<li><code>/etc/bind/named.conf</code>: archivo principal que incluye otros archivos de configuración.</li>
+<li><code>/etc/bind/named.conf.options</code>: configuración general del servidor.</li>
+<li><code>/etc/bind/named.conf.local</code>: definición de zonas DNS (directas e inversas).</li>
+<li><code>/var/cache/bind/</code>: ubicación donde se almacenan las zonas en caché.</li>
+</ul>
+<p><strong>Configuración básica</strong></p>
+<ol>
+<li><strong>Forzar uso de IPv4</strong></li>
+</ol>
+<ul>
+<li>Editar <code>/etc/default/named</code> y añadir:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="nv">OPTIONS</span><span class="o">=</span><span class="s2">&quot;-4&quot;</span>
+</code></pre></div>
+<ol start="2">
+<li>
+<p><strong>Configurar <code>named.conf.options</code></strong></p>
+<ul>
+<li>Definir una ACL (lista de control de acceso) para limitar las consultas recursivas a la red local (ej. <code>172.1.X.0/24</code>).</li>
+<li>Dentro del bloque <code>options {}</code>:<ul>
+<li>Permitir solo consultas recursivas desde la ACL.</li>
+<li>Desactivar transferencias de zona.</li>
+<li>Escuchar solo en la IP privada del servidor.</li>
+<li>Comentar la línea de IPv6: <code>// listen-on-v6 { any; };</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Configuración de zonas</strong></p>
+<ol>
+<li>
+<p><strong>Zona de resolución directa</strong></p>
+<ul>
+<li>Se declara en <code>named.conf.local</code> como zona <code>maestra</code>.</li>
+<li>Se crea un archivo de zona con registros:<ul>
+<li><code>SOA</code>: información de autoridad.</li>
+<li><code>NS</code>: servidores de nombres.</li>
+<li><code>A</code>: asignación de nombres a IPs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Zona de resolución inversa</strong></p>
+<ul>
+<li>También se declara en <code>named.conf.local</code>.</li>
+<li>Se crea un archivo de zona con registros <code>PTR</code> para mapear IPs a nombres.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Comprobaciones</strong></p>
+<ul>
+<li>Validar configuración con:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>named-checkconf
+</code></pre></div>
+* Reiniciar el servicio:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>systemctl<span class="w"> </span>restart<span class="w"> </span>bind9
+</code></pre></div>
+* Verificar funcionamiento desde los clientes con:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>nslookup<span class="w"> </span>&lt;nombre_de_dominio&gt;<span class="w"> </span>&lt;ip_del_servidor_dns&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span>nslookup<span class="w"> </span>&lt;ip_del_cliente&gt;<span class="w"> </span>&lt;ip_del_servidor_dns&gt;
+</code></pre></div>
+<h2 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h2>
+<h3 id="instalacion-de-apache-24">Instalación de Apache 2.4<a class="headerlink" href="#instalacion-de-apache-24" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Instala el servidor web Apache:</p>
+<p>apt-get install apache2</p>
+</li>
+</ol>
+<p>Para controlar el servicio apache2 podemos usar (para más <a href="http://httpd.apache.org/docs/2.4/es/stopping.html">información</a>):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>apache2ctl [-k start|restart|graceful|graceful-stop|stop]
+</code></pre></div>
+<ol start="2">
+<li>
+<p>¿Qué es la opción graceful?</p>
+</li>
+<li>
+<p>Comprueba la directiva donde indicamos el puerto de escucha del servidor. Modifica el puerto de escucha para que sea el 8080. Comprueba el acceso al servidor desde un navegador.</p>
+</li>
+</ol>
+<h3 id="estructura-de-los-ficheros-de-configuracion">Estructura de los ficheros de configuración<a class="headerlink" href="#estructura-de-los-ficheros-de-configuracion" title="Permanent link">&para;</a></h3>
+<p>El fichero principal de configuración de Apache2 es <code>/etc/apache2/apache2.conf</code>. En ese fichero se incluyen los ficheros que forman parte de la configuración de Apache2:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>...
+<span class="linenos" data-linenos="2 "></span>IncludeOptional mods-enabled/*.load
+<span class="linenos" data-linenos="3 "></span>IncludeOptional mods-enabled/*.conf
+<span class="linenos" data-linenos="4 "></span>...
+<span class="linenos" data-linenos="5 "></span>Include ports.conf
+<span class="linenos" data-linenos="6 "></span>...
+<span class="linenos" data-linenos="7 "></span>IncludeOptional conf-enabled/*.conf
+<span class="linenos" data-linenos="8 "></span>IncludeOptional sites-enabled/*.conf
+</code></pre></div>
+<p>Por defecto se indican las opciones de configuración del directorio <code>/var/www</code> y de todos sus subdirectorios, por lo tanto los <code>DocumentRoot</code> de los virtualhost que se crean deben ser subdirectorios del este directorio:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>&lt;Directory<span class="w"> </span>/var/www/&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">        </span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span>AllowOverride<span class="w"> </span>None
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span>Require<span class="w"> </span>all<span class="w"> </span>granted
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span>&lt;/Directory&gt;
+</code></pre></div>
+<p>Podemos indicar como directorio raíz de nuestros virtualhost otro directorio (tenemos que descomentar):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span><span class="c1">#&lt;Directory /srv/&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="c1">#    Options Indexes FollowSymLinks</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="c1">#    AllowOverride None</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="c1">#    Require all granted</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="c1">#&lt;/Directory&gt;</span>
+</code></pre></div>
+<h2 id="introduccion-al-virtualhosting">Introducción al VirtualHosting<a class="headerlink" href="#introduccion-al-virtualhosting" title="Permanent link">&para;</a></h2>
+<p>El término Hosting Virtual se refiere a hacer funcionar más de un sitio web (tales como <code>www.company1.com</code> y <code>www.company2.com</code>) en una sola máquina. Los sitios web virtuales pueden estar "basados en direcciones IP", lo que significa que cada sitio web tiene una dirección IP diferente, o "basados en nombres diferentes", lo que significa que con una sola dirección IP están funcionando sitios web con diferentes nombres (de dominio). Apache fue uno de los primeros servidores web en soportar hosting virtual basado en direcciones IP.</p>
+<p>El servidor web Apache2 se instala por defecto con un host virtual. La configuración de este sitio la podemos encontrar en:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>/etc/apache2/sites-available/000-default.conf
+</code></pre></div>
+Cuyo contenido podemos ver:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>&lt;VirtualHost<span class="w"> </span>*:80&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">            </span><span class="c1">#ServerName www.example.com </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">            </span>ServerAdmin<span class="w"> </span>webmaster@localhost
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span>DocumentRoot<span class="w"> </span>/var/www/html<span class="w">  </span>
+<span class="linenos" data-linenos="5 "></span><span class="w">            </span>ErrorLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log
+<span class="linenos" data-linenos="6 "></span><span class="w">            </span>CustomLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log<span class="w"> </span>combined<span class="w"> </span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span>&lt;/VirtualHost&gt;
+</code></pre></div>
+<p>Y por defecto este sitio virtual está habilitado, por lo que podemos comprobar que existe un enlace simbólico a este fichero en el directorio <code>/etc/apache2/sites-enables</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>lrwxrwxrwx 1 root root   35 Oct  3 15:24 000-default.conf -&gt; ../sites-available/000-default.conf
+</code></pre></div>
+<p>Podemos habilitar o deshabilitar nuestros host virtuales utilizando los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>a2ensite
+<span class="linenos" data-linenos="2 "></span>a2dissite
+</code></pre></div>
+<p>En el fichero de configuración general <code>/etc/apache2/apache2.conf</code> nos encontramos las opciones de configuración del directorio padre del indicado en la directiva <code>DocumentRoot</code> (suponemos que todos los host virtuales van a estar guardados en subdirectorios de este directorio):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">    </span>...
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span>&lt;Directory<span class="w"> </span>/var/www/&gt;
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span>Options<span class="w"> </span>Indexes<span class="w"> </span>FollowSymLinks
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span>AllowOverride<span class="w"> </span>None
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span>Require<span class="w"> </span>all<span class="w"> </span>granted
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span>&lt;/Directory&gt;
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span>...
+</code></pre></div>
+<h3 id="configuracion-de-virtualhosting">Configuración de VirtualHosting<a class="headerlink" href="#configuracion-de-virtualhosting" title="Permanent link">&para;</a></h3>
+<p>El objetivo de esta práctica es la puesta en marcha de dos sitios web utilizando el mismo servidor web apache. Hay que tener en cuenta lo siguiente:</p>
+<ul>
+<li>Cada sitio web tendrá nombres distintos.</li>
+<li>Cada sitio web compartirán la misma dirección IP y el mismo puerto (80).</li>
+</ul>
+<p>Queremos construir en nuestro servidor web apache dos sitios web con las siguientes características:</p>
+<ul>
+<li>El nombre de dominio del primero será <code>www.iesgn.org</code>, su directorio base será <code>/var/www/iesgn</code> y contendrá una página llamada <code>index.html</code>, donde sólo se verá una bienvenida a la página del Instituto Gonzalo Nazareno.</li>
+<li>En el segundo sitio vamos a crear una página donde se pondrán noticias por parte de los departamento, el nombre de este sitio será <code>www.departamentosgn.org</code>, y su directorio base será <code>/var/www/departamentos</code>. En este sitio sólo tendremos una página inicial <code>index.html</code>, dando la bienvenida a la página de los departamentos del instituto.</li>
+</ul>
+<p>Para conseguir estos dos sitios virtuales debes seguir los siguientes pasos:</p>
+<ol>
+<li>
+<p>Los ficheros de configuración de los sitios webs se encuentran en el directorio <code>/etc/apache2/sites-available</code>, por defecto hay dos ficheros, uno se llama <code>000-default.conf</code> que es la configuración del sitio web por defecto. Necesitamos tener dos ficheros para realizar la configuración de los dos sitios virtuales, para ello vamos a copiar el fichero <code>000-default.conf</code>:</p>
+<p>cd /etc/apache2/sites-available
+cp 000-default.conf iesgn.conf
+cp 000-default.conf departamentos.conf</p>
+<p>De esta manera tendremos un fichero llamado <code>iesgn.conf</code> para realizar la configuración del sitio web <code>www.iesgn.org</code>, y otro llamado <code>departamentos.conf</code> para el sitio web <code>www.departamentosgn.org</code>.</p>
+</li>
+<li>
+<p>Modificamos los ficheros <code>iesgn.conf</code> y <code>departamentos.conf</code>, para indicar el nombre que vamos ausar para acceder al host virtual (<code>ServerName</code>) y el directorio detrabajo (<code>DocumentRoot</code>).</p>
+</li>
+<li>
+<p>No es suficiente crear los ficheros de configuración de cada sitio web, es necesario crear un enlace simbólico a estos ficheros dentro del directorio <code>/etc/apache2/sites-enabled</code>, para ello:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>a2ensite iesgn
+<span class="linenos" data-linenos="2 "></span>a2ensite departamentos
+</code></pre></div>
+<p>La creación de los enlaces simbólicos se puede hacer con la instrucción <code>a2ensite nombre_fichero_configuracion</code>, para deshabilitar el sitio tenemos que borrar el enlace simbólico o usar la instrucción <code>a2dissite nombre_fichero_configuracion</code>.</p>
+</li>
+<li>
+<p>Crea los directorios y los ficheros index.html necesarios en <code>/var/www</code> y reiniciamos el servicio.</p>
+</li>
+<li>
+<p>Para terminar lo único que tendremos que hacer es cambiar el fichero hosts en los clientes y poner dos nuevas líneas donde se haga la conversión entre los dos nombre de dominio y la dirección IP del servidor.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>.. note:
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>    Repite el ejercicio cambiando los directorios de trabajo a ``/srv/www``. ¿Qué modificación debes hacer en el fichero ``/etc/apache2/apache2.conf``?
+</code></pre></div>
+<h3 id="mapear-url-a-ubicaciones-de-un-sistema-de-ficheros">Mapear URL a ubicaciones de un sistema de ficheros<a class="headerlink" href="#mapear-url-a-ubicaciones-de-un-sistema-de-ficheros" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Crea un nuevo host virtual que es accedido con el nombre <code>www.mapeo.com</code>, cuyo <code>DocumentRoot</code>  sea /srv/mapeo. </p>
+</li>
+<li>
+<p><a href="http://httpd.apache.org/docs/2.4/mod/mod_alias.html#alias">Alias</a>: Crea un alias en el host virtual del ejercicio anterior, que mi permita entrar en la 
+URL <code>http://www.mapeo.com/documentos</code> y visualice los ficheros del <code>/home/usuario/Documentos</code>. En la sección <code>Directory...</code> pon las mismas directivas que tiene la sección <code>Directory</code> del fichero <code>/etc/apache2/apache2.conf</code>.</p>
+</li>
+<li>
+<p><a href="http://httpd.apache.org/docs/2.4/mod/core.html#options">Options</a>: Determina para que sirven las siguientes opciones de funcionamieno:</p>
+<ul>
+<li>All</li>
+<li>FollowSymLinks</li>
+<li>Indexes</li>
+<li>MultiViews</li>
+<li>SymLinksOwnerMatch</li>
+<li>ExecCGI</li>
+</ul>
+<p>Detemina como funciona si delante de las opciones pongo el signo + o -.</p>
+<ul>
+<li>Crea un enlace directo dentro de <code>/home/usuario/document</code> y comprueba si es posible seguirlo. Cambia las opciones del directorio para que no siga los enlaces símbolicos.</li>
+<li>Deshabiliata la opción de que se listen los archivos existentes en la carpeta cuando no existe un fichero definido en la directiva <a href="http://httpd.apache.org/docs/2.4/mod/mod_dir.html#directoryindex">DirectoryIndex</a>.</li>
+<li>MultiViews: Para saber más sobre el <a href="http://httpd.apache.org/docs/2.4/content-negotiation.html">negociado de contenido</a>. Siguiendo el ejemplo de esta `página](http://www.howtoforge.com/using-apache2-content-negotiation-to-serve-different-languages) realiza un fichero de bienvenida en español e inglés y compruba como se visualiza.</li>
+</ul>
+</li>
+<li>
+<p>Usando la directiva <a href="http://httpd.apache.org/docs/2.4/mod/mod_alias.html#redirect">Redirect</a> realiza una redirección, que permita que cuando entre a tu servidor <code>http://nombre_servidor</code>, salte a <code>http://nombre_servidor/web</code>.</p>
+</li>
+<li>
+<p>Con la directiva <code>ErrorDocument</code> se puede crear <a href="http://httpd.apache.org/docs/2.4/custom-error.html">Respuesta de error personalizadas</a>. Todo esto se puede llevar a cabo en el fichero <code>/etc/apache2/conf-available/localized-error-pages.conf</code>. Después de leer sobre el tema realiza los siguientes ejercicios.</p>
+</li>
+</ol>
+<ul>
+<li>Cuando no se encuentre una página (error 404) por un mensje de error.</li>
+<li>Crea un alias llamado <code>error</code> que corresponda a <code>/srv/mapeo/error</code>. Dentro de ese directorio crea páginas personalizadas para visualizar cuando  se produzca un error 404 y cuando se tenga un forbidden (403). Configura el sistema para que se redireccione a estas páginas cuando se produce un error.</li>
+<li>Descomenta en el fichero <code>localized-error-pages.conf</code> las líneas adecuadas para tener los mensajes de error traducidos a los diferentes idiomas. Para que funcione tienes que hacer dos cosas:<ul>
+<li>Activar el módulo <code>include</code>.</li>
+<li>Si quieres los mensajes en español modifica adecuadamente la directiva <code>LanguagePriority</code> del módulo <code>negotiation</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="control-de-acceso">Control de acceso<a class="headerlink" href="#control-de-acceso" title="Permanent link">&para;</a></h2>
+<p>El <strong>Control de acceso</strong> en un servidor web nos permite determinar desde donde podemos acceder a los recursos del servidor.</p>
+<p>En <strong>apache2.2</strong> se utilizan las siguientes directivas: <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">order</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow">allow</a> y <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#deny">deny</a>. Un buen manual para que quede más claro lo puedes encontrar en este <a href="http://systemadmin.es/2011/04/la-directiva-order-de-apache">enlace</a>.  La directiva <a href="http://httpd.apache.org/docs/2.2/mod/core.html#satisfy">satisfy</a> controla como el se debe comportar el servidor cuando tenemos autorizaciones de control de acceso (allow, deny,...) y tenemos autorizaciones de usuarios (require).</p>
+<p>En <strong>apache2.4</strong> se utilizan las siguientes directivas: <a href="https://httpd.apache.org/docs/2.4/es/mod/mod_authz_core.html#require">Require</a>, <a href="https://httpd.apache.org/docs/2.4/es/mod/mod_authz_core.html#requireall">RequireAll</a>, <a href="https://httpd.apache.org/docs/2.4/es/mod/mod_authz_core.html#requireany">RequireAny</a> y <a href="https://httpd.apache.org/docs/2.4/es/mod/mod_authz_core.html#requirenone">RequireNone</a></p>
+<ol>
+<li>Comprueba el control de acceso por defecto que tiene el virtual host por defecto (000-default).</li>
+<li>Crea un escenario en Vagrant que tenga un servidor con una red publica, y una privada, un cliente conectada a la red privada. Crea un host virtual, que sólo se tenga acceso desde el cliente de la red local, y no se pueda acceder desde la anfitriona por la red pública.</li>
+</ol>
+<h2 id="autentificacion-basica">Autentificación básica<a class="headerlink" href="#autentificacion-basica" title="Permanent link">&para;</a></h2>
+<p>El servidor web Apache puede acompañarse de distintos módulos para proporcionar diferentes modelos de autenticación.
+La primera forma que veremos es la más simple. Usamos para ello el módulo de autenticación básica que viene instalada "de serie" con cualquier Apache: <a href="http://httpd.apache.org/docs/2.4/es/mod/mod_auth_basic.html">mod_auth_basic</a>. La configuración que tenemos que añadir en el fichero de definición del Virtual Host a proteger podría ser algo así:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;Directory<span class="w"> </span><span class="s2">&quot;/var/www/miweb/privado&quot;</span>&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span>AuthUserFile<span class="w"> </span><span class="s2">&quot;/etc/apache2/claves/passwd.txt&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span>AuthName<span class="w"> </span><span class="s2">&quot;Palabra de paso&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">  </span>AuthType<span class="w"> </span>Basic
+<span class="linenos" data-linenos="5 "></span><span class="w">  </span>Require<span class="w"> </span>valid-user
+<span class="linenos" data-linenos="6 "></span>&lt;/Directory&gt;
+</code></pre></div>
+<p>El método de autentificación básica se indica en la directiva <a href="http://httpd.apache.org/docs/2.4/es/mod/core.html#authtype">AuthType</a>.  </p>
+<ul>
+<li>En <code>Directory</code> escribimos el directorio a proteger, que puede ser el raíz de nuestro Virtual Host o un directorio interior a este. </li>
+<li>En <a href="http://httpd.apache.org/docs/2.4/es/mod/mod_authn_file.html#authuserfile">AuthUserFile</a> ponemos el fichero que guardará la información de usuarios y contraseñas que debería de estar, como en este ejemplo, en un directorio que no sea visitable desde nuestro Apache. Ahora comentaremos la forma de generarlo. </li>
+<li>Por último, en <a href="http://httpd.apache.org/docs/2.4/es/mod/core.html#authname">AuthName</a> personalizamos el mensaje que aparecerá en la ventana del navegador que nos pedirá la contraseña.</li>
+<li>Para controlar el control de acceso, es decir, que usuarios tienen permiso para obtener el recurso utilizamos las siguientes directivas: <a href="http://httpd.apache.org/docs/2.4/es/mod/mod_authz_groupfile.html#authgroupfile">AuthGroupFile</a>, <a href="http://httpd.apache.org/docs/2.4/es/mod/core.html#require">Require user</a>, <a href="http://httpd.apache.org/docs/2.4/es/mod/core.html#require">Require group</a>.</li>
+</ul>
+<p>El fichero de contraseñas se genera mediante la utilidad <code>htpasswd</code>. Su sintaxis es bien sencilla. Para añadir un nuevo usuario al fichero operamos así:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ htpasswd /etc/apache2/claves/passwd.txt carolina
+<span class="linenos" data-linenos="2 "></span>New password:
+<span class="linenos" data-linenos="3 "></span>Re-type new password:
+<span class="linenos" data-linenos="4 "></span>Adding password for user carolina
+</code></pre></div>
+<p>Para crear el fichero de contraseñas con la introducción del primer usuario tenemos que añadir la opción <code>-c</code> (create) al comando anterior. Si por error la seguimos usando al incorporar nuevos usuarios borraremos todos los anteriores, así que cuidado con esto. Las contraseñas, como podemos ver a continuación, no se guardan en claro. Lo que se almacena es el resultado de aplicar una <a href="http://es.wikipedia.org/wiki/Hash">función hash</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>josemaria:rOUetcAKYaliE
+<span class="linenos" data-linenos="2 "></span>carolina:hmO6V4bM8KLdw
+<span class="linenos" data-linenos="3 "></span>alberto:9RjyKKYK.xyhk
+</code></pre></div>
+<p>Para denegar el acceso a algún usuario basta con que borremos la línea correspondiente al mismo. No es necesario que le pidamos a Apache que vuelva a leer su configuración cada vez que hagamos algún cambio en este fichero de contraseñas.</p>
+<p>La principal ventaja de este método es su sencillez. Sus inconvenientes: lo incómodo de delegar la generación de nuevos usuarios en alguien que no sea un administrador de sistemas o de hacer un front-end para que sea el propio usuario quien cambie su contraseña. Y, por supuesto, que dichas contraseñas viajan en claro a través de la red. Si queremos evitar esto último podemos crear una <a href="http://blog.unlugarenelmundo.es/2008/09/23/chuletillas-y-viii-apache-2-con-ssl-en-debian/">instancia Apache con SSL</a>.</p>
+<p><strong>Cómo funciona este método de autentificación</strong></p>
+<p>Cuando desde el cliente intentamos acceder a una URL que esta controlada por el método de autentificación básico:</p>
+<ol>
+<li>
+<p>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>WWW-Authenticate:<span class="w"> </span>Basic<span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;Palabra de paso&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Authorization:<span class="w"> </span>Basic<span class="w"> </span>am9zZTpqb3Nl
+</code></pre></div>
+</li>
+</ol>
+<p>En realidad la información que se manda es el nombre de usuario y la contraseña en base 64, que se puede decodificar fácilmente con cualquier <a href="http://www.base64decode.org/">utilidad</a>.</p>
+<h3 id="autentificacion-tipo-digest">Autentificación tipo digest<a class="headerlink" href="#autentificacion-tipo-digest" title="Permanent link">&para;</a></h3>
+<p>La autentificación tipo digest soluciona el problema de la transferencia de contraseñas en claro sin necesidad de usar SSL.  El procedimiento, como veréis, es muy similar al tipo básico pero cambiando algunas de las directivas y usando la utilidad <code>htdigest</code> en lugar de <code>htpassword</code> para crear el fichero de contraseñas. El módulo de autenticación necesario suele venir con Apache pero no habilitado por defecto. Para activarlo usamos la utilidad <code>a2enmod</code> y, a continuación reiniciamos el servidor Apache:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ a2enmod auth_digest
+<span class="linenos" data-linenos="2 "></span>$ /etc/init.d/apache2 restart
+</code></pre></div>
+<p>Luego incluimos una sección como esta en el fichero de configuración de nuestro Virtual Host:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;Directory<span class="w"> </span><span class="s2">&quot;/var/www/miweb/privado&quot;</span>&gt;
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span>AuthType<span class="w"> </span>Digest
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span>AuthName<span class="w"> </span><span class="s2">&quot;dominio&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">   </span>AuthUserFile<span class="w"> </span><span class="s2">&quot;/etc/claves/digest.txt&quot;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">   </span>Require<span class="w"> </span>valid-user
+<span class="linenos" data-linenos="6 "></span>&lt;/Directory&gt;
+</code></pre></div>
+<p>Como vemos, es muy similar a la configuración necesaria en la autenticación básica. La directiva <code>AuthName</code> que en la autenticación básica se usaba para mostrar un mensaje en la ventana que pide el usuario y contraseña, ahora se usa también para identificar un nombre de dominio (realm) que debe de coincidir con el que aparezca después en el fichero de contraseñas. Dicho esto, vamos a generar dicho fichero con la utilidad htdigest:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$ htdigest -c /etc/claves/digest.txt dominio josemaria
+<span class="linenos" data-linenos="2 "></span>Adding password for josemaria in realm dominio.
+<span class="linenos" data-linenos="3 "></span>New password:
+<span class="linenos" data-linenos="4 "></span>Re-type new password:
+</code></pre></div>
+<p>Al igual que ocurría con htpassword, la opción <code>-c</code> (create) sólo debemos de usarla al crear el fichero con el primer usuario. Luego añadiremos los restantes usuarios prescindiendo de ella. A continuación vemos el fichero que se genera después de añadir un segundo usuario:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>josemaria:dominio:8d6af4e11e38ee8b51bb775895e11e0f
+<span class="linenos" data-linenos="2 "></span>gemma:dominio:dbd98f4294e2a49f62a486ec070b9b8c
+</code></pre></div>
+<p><strong>Cómo funciona este método de autentificación</strong></p>
+<p>Cuando desde el cliente intentamos acceder a una URL que esta controlada por el método de autentificación de tipo digest:</p>
+<ol>
+<li>
+<p>El servidor manda una respuesta del tipo 401 <em>HTTP/1.1 401 Authorization Required</em> con  una cabecera <em>WWW-Authenticate</em> al cliente de la forma:</p>
+<p>```bash
+WWW-Authenticate: Digest realm="dominio", 
+                 nonce="cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485", 
+                 algorithm=MD5, 
+                 qop="auth"</p>
+</li>
+<li>
+<p>El navegador del cliente muestra una ventana emergente preguntando por el nombre de usuario y contraseña y cuando se rellena se manda una petición con una cabecera <em>Authorization</em></p>
+<p>```bash
+Authorization   Digest username="jose", 
+                realm="dominio", 
+                nonce="cIIDldTpBAA=9b0ce6b8eff03f5ef8b59da45a1ddfca0bc0c485",
+                uri="/digest/", 
+                algorithm=MD5, 
+                response="814bc0d6644fa1202650e2c404460a21", 
+                qop=auth, 
+                nc=00000001, 
+                cnonce="3da69c14300e446b"</p>
+</li>
+</ol>
+<p>La información que se manda es <em>responde</em> que en este caso esta cifrada usando md5 y que se calcula de la siguiente manera:</p>
+<ul>
+<li>Se calcula el md5 del nombre de usuario, del dominio (realm) y la contraseña, la llamamos HA1.</li>
+<li>Se calcula el md5 del método de la petición (por ejemplo GET) y de la uri a la que estamos accediendo, la llamamos HA2.</li>
+<li>El reultado que se manda es el md5 de HA1, un número aleatorio (nonce), el contador de peticiones (nc), el qop y el HA2.</li>
+</ul>
+<p>Una vez que lo recibe el servidor, puede hacer la misma operación y comprobar si la información que se ha enviado es válida, con lo que se permitiría el acceso.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2024-2025 Francisco Javier Hernández Illán - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<fj.hernandez@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/fjavier-hernandez-illan" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookie</h4>
+<p>Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes. Con tu consentimiento, me ayudas a mejorar estos materiales.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

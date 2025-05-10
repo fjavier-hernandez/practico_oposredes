@@ -493,6 +493,46 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Servicios/Servicios.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Seguridad/Seguridad.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seguridad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -508,9 +548,9 @@
                   
 
 
-<h1 id="ipv6">IPv6<a class="headerlink" href="#ipv6" title="Permanent link">&para;</a></h1>
+<h1 id="ipv6"><strong>IPv6</strong><a class="headerlink" href="#ipv6" title="Permanent link">&para;</a></h1>
 <p>IPv6 es la evolución del protocolo IPv4 y se diseñó para solventar sus limitaciones, especialmente la escasez de direcciones. </p>
-<h2 id="ipv6-caracteristicas-y-funcionamiento">IPv6: Características y Funcionamiento<a class="headerlink" href="#ipv6-caracteristicas-y-funcionamiento" title="Permanent link">&para;</a></h2>
+<h2 id="ipv6-caracteristicas-y-funcionamiento"><strong>IPv6: Características y Funcionamiento</strong><a class="headerlink" href="#ipv6-caracteristicas-y-funcionamiento" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Direcciones de 128 bits</strong>: Permite una cantidad casi ilimitada de direcciones IP (3.4×10³⁸ direcciones)</li>
 <li><strong>Formato hexadecimal</strong>: 8 grupos de 16 bits separados por <code>:</code> (ej: <code>2001:0db8:85a3:08d3:1319:8a2e:0370:7334</code>)</li>
@@ -520,7 +560,7 @@
 <li><strong>Mejor QoS</strong>: Etiquetas de flujo para priorización</li>
 <li><strong>Sin NAT</strong>: Cada dispositivo puede tener dirección pública</li>
 </ul>
-<h2 id="tipos-de-direcciones-ipv6">Tipos de direcciones IPv6<a class="headerlink" href="#tipos-de-direcciones-ipv6" title="Permanent link">&para;</a></h2>
+<h2 id="tipos-de-direcciones-ipv6"><strong>Tipos de direcciones IPv6</strong><a class="headerlink" href="#tipos-de-direcciones-ipv6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -579,9 +619,9 @@
 
    ``` -->
 
-<h2 id="subnetting-en-ipv6-conceptos-claves">Subnetting en IPv6: Conceptos Claves<a class="headerlink" href="#subnetting-en-ipv6-conceptos-claves" title="Permanent link">&para;</a></h2>
+<h2 id="subnetting-en-ipv6-conceptos-claves"><strong>Subnetting en IPv6: Conceptos Claves</strong><a class="headerlink" href="#subnetting-en-ipv6-conceptos-claves" title="Permanent link">&para;</a></h2>
 <p>En IPv6, el subnetting es más sencillo y flexible que en IPv4 gracias al amplio espacio de direcciones (128 bits). Las asignaciones siguen convenciones estándar que facilitan la planificación de redes.</p>
-<h3 id="estructura-general-de-una-direccion-ipv6">Estructura General de una Dirección IPv6<a class="headerlink" href="#estructura-general-de-una-direccion-ipv6" title="Permanent link">&para;</a></h3>
+<h3 id="estructura-general-de-una-direccion-ipv6"><strong>Estructura General de una Dirección IPv6</strong><a class="headerlink" href="#estructura-general-de-una-direccion-ipv6" title="Permanent link">&para;</a></h3>
 <p>En IPv6, la estructura de la dirección se divide en tres partes principales cuando se realiza subnetting:</p>
 <table>
 <thead>
@@ -635,7 +675,7 @@
 <li>Generado automáticamente (SLAAC) o manualmente</li>
 <li>Usa comúnmente EUI-64 (derivado de MAC)</li>
 </ul>
-<h3 id="tamanos-de-prefijo-comunes-en-ipv6">Tamaños de prefijo comunes en IPv6<a class="headerlink" href="#tamanos-de-prefijo-comunes-en-ipv6" title="Permanent link">&para;</a></h3>
+<h3 id="tamanos-de-prefijo-comunes-en-ipv6"><strong>Tamaños de prefijo comunes en IPv6</strong><a class="headerlink" href="#tamanos-de-prefijo-comunes-en-ipv6" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -678,7 +718,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="ejemplo-dividir-un-prefijo-48-en-subredes-64">Ejemplo: Dividir un prefijo <code>/48</code> en subredes <code>/64</code><a class="headerlink" href="#ejemplo-dividir-un-prefijo-48-en-subredes-64" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-dividir-un-prefijo-48-en-subredes-64"><strong>Ejemplo: Dividir un prefijo <code>/48</code> en subredes <code>/64</code></strong><a class="headerlink" href="#ejemplo-dividir-un-prefijo-48-en-subredes-64" title="Permanent link">&para;</a></h3>
 <p>Si una empresa recibe el prefijo <strong><code>2001:db8:abcd::/48</code></strong>, la estructura sería:</p>
 <h4 id="estructura-de-la-direccion-ipv6"><strong>Estructura de la dirección IPv6</strong><a class="headerlink" href="#estructura-de-la-direccion-ipv6" title="Permanent link">&para;</a></h4>
 <table>
@@ -741,7 +781,7 @@
 </tbody>
 </table>
 <p>Cada departamento tiene una subred <code>/64</code> con <strong>18.4×10¹⁹ direcciones disponibles</strong>.</p>
-<h3 id="ejercicio-resuelto-subnetting-ipv6-con-vlsm">Ejercicio Resuelto: Subnetting IPv6 con VLSM<a class="headerlink" href="#ejercicio-resuelto-subnetting-ipv6-con-vlsm" title="Permanent link">&para;</a></h3>
+<h3 id="ejercicio-resuelto-subnetting-ipv6-con-vlsm"><strong>Ejercicio Resuelto: Subnetting IPv6 con VLSM</strong><a class="headerlink" href="#ejercicio-resuelto-subnetting-ipv6-con-vlsm" title="Permanent link">&para;</a></h3>
 <p>Una empresa ha obtenido el prefijo <strong>2001:DB8:ACAD::/48</strong> y necesita dividir su red en varias subredes para sus diferentes departamentos. La empresa tiene los siguientes requisitos:</p>
 <ol>
 <li>Departamento de Informática: Requiere 5 subredes, cada una con al menos 500 hosts.</li>
@@ -750,14 +790,14 @@
 <li>Zona WiFi: Necesita una subred con al menos 4000 hosts.</li>
 <li>Enlaces punto a punto: Se requieren 5 enlaces entre routers, cada uno con 2 direcciones IP.</li>
 </ol>
-<h4 id="preguntas">Preguntas:<a class="headerlink" href="#preguntas" title="Permanent link">&para;</a></h4>
+<h4 id="preguntas"><strong>Preguntas:</strong><a class="headerlink" href="#preguntas" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Asignar subredes con el menor prefijo posible para optimizar el uso de direcciones.</li>
 <li>Indicar la dirección de red y la primera y última dirección utilizable de cada subred.</li>
 <li>Explicar cuántas direcciones se desperdician en cada subred.</li>
 <li>Justificar cómo se podría mejorar la eficiencia del direccionamiento.</li>
 </ol>
-<h4 id="resolucion">Resolución<a class="headerlink" href="#resolucion" title="Permanent link">&para;</a></h4>
+<h4 id="resolucion"><strong>Resolución</strong><a class="headerlink" href="#resolucion" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Requerimientos por Departamento</strong></li>
 </ol>
@@ -1002,7 +1042,7 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 <ol start="4">
 <li><strong>Optimización/Mejores Prácticas para IPv6</strong></li>
 </ol>
-<h5 id="agregacion-de-rutas">Agregación de rutas<a class="headerlink" href="#agregacion-de-rutas" title="Permanent link">&para;</a></h5>
+<h5 id="agregacion-de-rutas"><strong>Agregación de rutas</strong><a class="headerlink" href="#agregacion-de-rutas" title="Permanent link">&para;</a></h5>
 <table>
 <thead>
 <tr>
@@ -1047,12 +1087,12 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 <span class="linenos" data-linenos="6 "></span>end
 <span class="linenos" data-linenos="7 "></span>write<span class="w"> </span>memory
 </code></pre></div>
-<h5 id="planificacion-jerarquica">Planificación jerárquica:<a class="headerlink" href="#planificacion-jerarquica" title="Permanent link">&para;</a></h5>
+<h5 id="planificacion-jerarquica"><strong>Planificación jerárquica:</strong><a class="headerlink" href="#planificacion-jerarquica" title="Permanent link">&para;</a></h5>
 <p>Reservar bloques contiguos para futuras expansiones</p>
-<h2 id="ejercicio-de-enrutamiento-ipv6">Ejercicio de Enrutamiento IPv6<a class="headerlink" href="#ejercicio-de-enrutamiento-ipv6" title="Permanent link">&para;</a></h2>
-<h3 id="enunciado-del-ejercicio">Enunciado del Ejercicio<a class="headerlink" href="#enunciado-del-ejercicio" title="Permanent link">&para;</a></h3>
+<h2 id="ejercicio-de-enrutamiento-ipv6"><strong>Ejercicio de Enrutamiento IPv6</strong><a class="headerlink" href="#ejercicio-de-enrutamiento-ipv6" title="Permanent link">&para;</a></h2>
+<h3 id="enunciado-del-ejercicio"><strong>Enunciado del Ejercicio</strong><a class="headerlink" href="#enunciado-del-ejercicio" title="Permanent link">&para;</a></h3>
 <p>Configurar el enrutamiento IPv6 en una red compuesta por tres routers y varias subredes, asegurando la conectividad entre todos los dispositivos.</p>
-<h3 id="mapa-de-red">Mapa de Red<a class="headerlink" href="#mapa-de-red" title="Permanent link">&para;</a></h3>
+<h3 id="mapa-de-red"><strong>Mapa de Red</strong><a class="headerlink" href="#mapa-de-red" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph TD
    PC1[PC1] ---|G0/0| R1[R1]
    R1 ---|G0/1| PC2[PC2]
@@ -1062,12 +1102,12 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
    R2 ---|G0/1| PC4[PC4]
    R3 ---|G0/0| PC5[PC5]
    R3 ---|G0/1| PC6[PC6]</code></pre>
-<h3 id="instrucciones">Instrucciones<a class="headerlink" href="#instrucciones" title="Permanent link">&para;</a></h3>
-<h4 id="paso-1-configurar-las-direcciones-ipv6-en-los-routers-y-pcs">Paso 1: Configurar las direcciones IPv6 en los routers y PCs<a class="headerlink" href="#paso-1-configurar-las-direcciones-ipv6-en-los-routers-y-pcs" title="Permanent link">&para;</a></h4>
+<h3 id="instrucciones"><strong>Instrucciones</strong><a class="headerlink" href="#instrucciones" title="Permanent link">&para;</a></h3>
+<h4 id="paso-1-configurar-las-direcciones-ipv6-en-los-routers-y-pcs"><strong>Paso 1: Configurar las direcciones IPv6 en los routers y PCs</strong><a class="headerlink" href="#paso-1-configurar-las-direcciones-ipv6-en-los-routers-y-pcs" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Asigna las direcciones IPv6 a las interfaces correspondientes según la tabla de interfaces.</li>
 </ul>
-<h3 id="tabla-de-resumen-de-interfaces-de-router">Tabla de Resumen de Interfaces de Router<a class="headerlink" href="#tabla-de-resumen-de-interfaces-de-router" title="Permanent link">&para;</a></h3>
+<h3 id="tabla-de-resumen-de-interfaces-de-router"><strong>Tabla de Resumen de Interfaces de Router</strong><a class="headerlink" href="#tabla-de-resumen-de-interfaces-de-router" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1186,14 +1226,14 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 </tr>
 </tbody>
 </table>
-<h4 id="paso-2-configurar-el-enrutamiento-estatico-en-los-routers">Paso 2: Configurar el enrutamiento estático en los routers<a class="headerlink" href="#paso-2-configurar-el-enrutamiento-estatico-en-los-routers" title="Permanent link">&para;</a></h4>
+<h4 id="paso-2-configurar-el-enrutamiento-estatico-en-los-routers"><strong>Paso 2: Configurar el enrutamiento estático en los routers</strong><a class="headerlink" href="#paso-2-configurar-el-enrutamiento-estatico-en-los-routers" title="Permanent link">&para;</a></h4>
 <ul>
 <li>En R1, configura rutas estáticas para llegar a las subredes conectadas a R2 y R3.</li>
 <li>En R2, configura rutas estáticas para llegar a las subredes conectadas a R1 y R3.</li>
 <li>En R3, configura rutas estáticas para llegar a las subredes conectadas a R1 y R2.</li>
 </ul>
-<h3 id="ejemplo-de-configuracion">Ejemplo de Configuración<a class="headerlink" href="#ejemplo-de-configuracion" title="Permanent link">&para;</a></h3>
-<h4 id="configuracion-en-r1">Configuración en R1<a class="headerlink" href="#configuracion-en-r1" title="Permanent link">&para;</a></h4>
+<h3 id="ejemplo-de-configuracion"><strong>Ejemplo de Configuración</strong><a class="headerlink" href="#ejemplo-de-configuracion" title="Permanent link">&para;</a></h3>
+<h4 id="configuracion-en-r1"><strong>Configuración en R1</strong><a class="headerlink" href="#configuracion-en-r1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>interface<span class="w"> </span>GigabitEthernet0/0
 <span class="linenos" data-linenos=" 2 "></span><span class="w"> </span>ipv6<span class="w"> </span>address<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:1::1/64
 <span class="linenos" data-linenos=" 3 "></span><span class="w"> </span>no<span class="w"> </span>shutdown
@@ -1211,7 +1251,7 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 <span class="linenos" data-linenos="15 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:6::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::3
 <span class="linenos" data-linenos="16 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:7::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::3
 </code></pre></div>
-<h4 id="configuracion-en-r2">Configuración en R2<a class="headerlink" href="#configuracion-en-r2" title="Permanent link">&para;</a></h4>
+<h4 id="configuracion-en-r2"><strong>Configuración en R2</strong><a class="headerlink" href="#configuracion-en-r2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>interface<span class="w"> </span>GigabitEthernet0/0
 <span class="linenos" data-linenos=" 2 "></span><span class="w"> </span>ipv6<span class="w"> </span>address<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:4::1/64
 <span class="linenos" data-linenos=" 3 "></span><span class="w"> </span>no<span class="w"> </span>shutdown
@@ -1229,7 +1269,7 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 <span class="linenos" data-linenos="15 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:6::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::3
 <span class="linenos" data-linenos="16 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:7::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::3
 </code></pre></div>
-<h4 id="configuracion-en-r3">Configuración en R3<a class="headerlink" href="#configuracion-en-r3" title="Permanent link">&para;</a></h4>
+<h4 id="configuracion-en-r3"><strong>Configuración en R3</strong><a class="headerlink" href="#configuracion-en-r3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>interface<span class="w"> </span>GigabitEthernet0/0
 <span class="linenos" data-linenos=" 2 "></span><span class="w"> </span>ipv6<span class="w"> </span>address<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:6::1/64
 <span class="linenos" data-linenos=" 3 "></span><span class="w"> </span>no<span class="w"> </span>shutdown
@@ -1247,7 +1287,7 @@ En IPv6, las subredes /64 son estándar, lo que significa que, aunque se necesit
 <span class="linenos" data-linenos="15 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:4::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::2
 <span class="linenos" data-linenos="16 "></span>ipv6<span class="w"> </span>route<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:5::/64<span class="w"> </span><span class="m">2001</span>:0DB8:ACAD:3::2
 </code></pre></div>
-<h4 id="paso-3-verificar-la-conectividad">Paso 3: Verificar la conectividad<a class="headerlink" href="#paso-3-verificar-la-conectividad" title="Permanent link">&para;</a></h4>
+<h4 id="paso-3-verificar-la-conectividad"><strong>Paso 3: Verificar la conectividad</strong><a class="headerlink" href="#paso-3-verificar-la-conectividad" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Usa los comandos <code>ping</code> y <code>traceroute</code> para verificar la conectividad entre todos los PCs.</li>
 </ul>

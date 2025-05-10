@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/ARP/ARP.html">
+        <link rel="canonical" href="https://github.com/fjavier-hernandez/practico_oposredes/Seguridad/Seguridad.html">
       
       
-        <link rel="prev" href="../Enrutamiento/Enrutamiento.html">
+        <link rel="prev" href="../Servicios/Servicios.html">
       
-      
-        <link rel="next" href="../Servicios/Servicios.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>ARP - Práctico de Redes</title>
+        <title>Seguridad - Práctico de Redes</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arp-address-resolution-protocol" class="md-skip">
+        <a href="#iptables" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ARP
+              Seguridad
             
           </span>
         </div>
@@ -308,30 +306,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ARP
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="ARP.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ARP/ARP.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -340,182 +318,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#que-es-arp" class="md-nav__link">
-    <span class="md-ellipsis">
-      ¿Qué es ARP?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caracteristicas-de-arp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Características de ARP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#funciones-de-arp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Funciones de ARP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proceso-de-arp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proceso de ARP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#seguridad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Seguridad
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplos-de-funcionamiento" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ejemplos de funcionamiento
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ejercicio-arp-comunicacion-entre-pc-y-portatil2" class="md-nav__link">
-    <span class="md-ellipsis">
-      📡 Ejercicio ARP – Comunicación entre PC y Portátil2
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-1-pc-portatil2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Paso 1: PC → Portátil2
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔁 Paso 1: PC → Portátil2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arp-request-pc-pregunta-por-la-mac-de-portatil2" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARP Request (PC pregunta por la MAC de Portátil2)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arp-reply-portatil2-responde-con-su-mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARP Reply (Portátil2 responde con su MAC)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trama-ip-pc-envia-datos-a-portatil2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trama IP (PC envía datos a Portátil2)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-2-portatil2-pc" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 Paso 2: Portátil2 → PC
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔁 Paso 2: Portátil2 → PC">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arp-request-portatil2-pregunta-por-la-mac-de-pc" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARP Request (Portátil2 pregunta por la MAC de PC)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arp-reply-pc-responde-con-su-mac" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARP Reply (PC responde con su MAC)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trama-ip-portatil2-responde-al-mensaje" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trama IP (Portátil2 responde al mensaje)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notas" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Notas
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -544,10 +346,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Seguridad/Seguridad.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Seguridad
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Seguridad.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -556,6 +376,105 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iptables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iptables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-reglas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Reglas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas-y-reglas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadenas y Reglas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Targets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targets-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Targets Específicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cadenas-mangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadenas Mangle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netfilter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-de-oposiciones-seguridad-informatica-configuracion-basica-con-iptables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de Oposiciones - Seguridad Informática: Configuración Básica con iptables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -575,168 +494,157 @@
                   
 
 
-<h1 id="arp-address-resolution-protocol"><strong>ARP (Address Resolution Protocol)</strong><a class="headerlink" href="#arp-address-resolution-protocol" title="Permanent link">&para;</a></h1>
-<h2 id="que-es-arp"><strong>¿Qué es ARP?</strong><a class="headerlink" href="#que-es-arp" title="Permanent link">&para;</a></h2>
-<p>ARP es un protocolo de capa de red (nivel 3 OSI) que permite a un host obtener la dirección MAC (capa 2) asociada a una dirección IP dentro de una red local (LAN).</p>
-<h2 id="caracteristicas-de-arp"><strong>Características de ARP</strong><a class="headerlink" href="#caracteristicas-de-arp" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Protocolo de Capa de Enlace</strong>: ARP opera en la capa de enlace de datos del modelo OSI.</li>
-<li><strong>Mapeo de Direcciones</strong>: Su función principal es mapear direcciones IP (lógicas) a direcciones MAC (físicas).</li>
-<li><strong>Mensajes ARP</strong>: Utiliza dos tipos de mensajes: solicitudes ARP (ARP Request) y respuestas ARP (ARP Reply).</li>
-</ol>
-<h2 id="funciones-de-arp"><strong>Funciones de ARP</strong><a class="headerlink" href="#funciones-de-arp" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Resolución de Direcciones</strong>: ARP permite que un dispositivo en una red local descubra la dirección MAC de otro dispositivo a partir de su dirección IP.</li>
-<li><strong>Actualización de Caché</strong>: Mantiene una caché ARP donde almacena temporalmente las direcciones IP y MAC mapeadas para reducir la necesidad de enviar solicitudes repetidas.</li>
-<li><strong>Comunicación Local</strong>: Facilita la comunicación entre dispositivos en la misma red local (LAN) al asegurar que los paquetes de datos se envíen a la dirección MAC correcta.</li>
-</ol>
-<h2 id="proceso-de-arp"><strong>Proceso de ARP</strong><a class="headerlink" href="#proceso-de-arp" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Solicitud ARP</strong>: Cuando un dispositivo necesita conocer la dirección MAC de otro dispositivo, envía una solicitud ARP a la red.</li>
-<li><strong>Respuesta ARP</strong>: El dispositivo con la dirección IP correspondiente responde con su dirección MAC.</li>
-<li><strong>Actualización de Caché</strong>: La dirección MAC recibida se almacena en la caché ARP del dispositivo solicitante.</li>
-</ol>
-<h2 id="seguridad"><strong>Seguridad</strong><a class="headerlink" href="#seguridad" title="Permanent link">&para;</a></h2>
+  <h1>Seguridad</h1>
+
+<h2 id="iptables"><strong>Iptables</strong><a class="headerlink" href="#iptables" title="Permanent link">&para;</a></h2>
+<p>Iptables es una herramienta de configuración de reglas de seguridad para el sistema operativo Linux. Permite controlar y filtrar el tráfico de red en función de criterios específicos.</p>
+<h2 id="tipos-de-reglas"><strong>Tipos de Reglas</strong><a class="headerlink" href="#tipos-de-reglas" title="Permanent link">&para;</a></h2>
+<p>Las reglas de iptables se clasifican en tres categorías:</p>
 <ul>
-<li><strong>ARP Spoofing</strong>: Una vulnerabilidad donde un atacante envía mensajes ARP falsificados para interceptar o redirigir el tráfico de red.</li>
+<li><strong>Reglas de entrada:</strong> Controlan el tráfico que entra al sistema.</li>
+<li><strong>Reglas de salida:</strong> Controlan el tráfico que sale del sistema.</li>
+<li><strong>Reglas de redirección:</strong> Redirigen el tráfico entre interfaces o direcciones IP.</li>
 </ul>
-<h2 id="ejemplos-de-funcionamiento">Ejemplos de funcionamiento<a class="headerlink" href="#ejemplos-de-funcionamiento" title="Permanent link">&para;</a></h2>
-<p>Cuando una máquina necesita comunicarse con otra en una red, necesita conocer en primera instancia su IP para poder enviar el paquete a su destino, pero en la capa 2 del modelo OSI, utiliza direcciones MAC. El protocolo ARP entra en juego en este momento, dado que envía los mensajes pertinentes para averiguar la dirección MAC asociada a una IP concreta.</p>
-<p><img alt="alt text" src="arp.gif" /></p>
-<p>Cuando un dispositivo desea enviar paquetes a otro, lanza un mensaje broadcast ARP preguntando en la red qué dispositivo posee esa IP concreta y esperando una respuesta únicamente de ese dispositivo identificándose y, además, enviando su MAC.</p>
-<p><img alt="alt text" src="arp2.gif" /></p>
-<p>De esta forma, los dispositivos en la red van construyendo sus tablas ARP, donde cada entrada hace corresponder una IP con su MAC, de tal forma que si tuvieran que volver a enviar mensajes a esas máquinas, ya no necesitan pasar por el proceso de averiguación de direcciones MAC.</p>
-<h2 id="ejercicio-arp-comunicacion-entre-pc-y-portatil2">📡 Ejercicio ARP – Comunicación entre PC y Portátil2<a class="headerlink" href="#ejercicio-arp-comunicacion-entre-pc-y-portatil2" title="Permanent link">&para;</a></h2>
-<p>Supuesto: Las tablas ARP y MAC están vacías, pero todos los dispositivos tienen IP asignada correctamente. Se desea enviar un mensaje desde <strong>PC</strong> a <strong>Portátil2</strong>, ambos en la misma red.</p>
-<hr />
-<h2 id="paso-1-pc-portatil2">🔁 Paso 1: PC → Portátil2<a class="headerlink" href="#paso-1-pc-portatil2" title="Permanent link">&para;</a></h2>
-<h3 id="arp-request-pc-pregunta-por-la-mac-de-portatil2">ARP Request (PC pregunta por la MAC de Portátil2)<a class="headerlink" href="#arp-request-pc-pregunta-por-la-mac-de-portatil2" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de PC</td>
-<td>FF:FF:FF:FF:FF:FF (Broadcast)</td>
-<td>IP de PC</td>
-<td>IP de Portátil2</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="arp-reply-portatil2-responde-con-su-mac">ARP Reply (Portátil2 responde con su MAC)<a class="headerlink" href="#arp-reply-portatil2-responde-con-su-mac" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de Portátil2</td>
-<td>MAC de PC</td>
-<td>IP de Portátil2</td>
-<td>IP de PC</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="trama-ip-pc-envia-datos-a-portatil2">Trama IP (PC envía datos a Portátil2)<a class="headerlink" href="#trama-ip-pc-envia-datos-a-portatil2" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de PC</td>
-<td>MAC de Portátil2</td>
-<td>IP de PC</td>
-<td>IP de Portátil2</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="paso-2-portatil2-pc">🔁 Paso 2: Portátil2 → PC<a class="headerlink" href="#paso-2-portatil2-pc" title="Permanent link">&para;</a></h2>
-<h3 id="arp-request-portatil2-pregunta-por-la-mac-de-pc">ARP Request (Portátil2 pregunta por la MAC de PC)<a class="headerlink" href="#arp-request-portatil2-pregunta-por-la-mac-de-pc" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de Portátil2</td>
-<td>FF:FF:FF:FF:FF:FF (Broadcast)</td>
-<td>IP de Portátil2</td>
-<td>IP de PC</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="arp-reply-pc-responde-con-su-mac">ARP Reply (PC responde con su MAC)<a class="headerlink" href="#arp-reply-pc-responde-con-su-mac" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de PC</td>
-<td>MAC de Portátil2</td>
-<td>IP de PC</td>
-<td>IP de Portátil2</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="trama-ip-portatil2-responde-al-mensaje">Trama IP (Portátil2 responde al mensaje)<a class="headerlink" href="#trama-ip-portatil2-responde-al-mensaje" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>MAC Origen</th>
-<th>MAC Destino</th>
-<th>IP Origen</th>
-<th>IP Destino</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MAC de Portátil2</td>
-<td>MAC de PC</td>
-<td>IP de Portátil2</td>
-<td>IP de PC</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="notas">🧠 Notas<a class="headerlink" href="#notas" title="Permanent link">&para;</a></h2>
+<h2 id="cadenas-y-reglas"><strong>Cadenas y Reglas</strong><a class="headerlink" href="#cadenas-y-reglas" title="Permanent link">&para;</a></h2>
+<p>Las reglas se agrupan en cadenas. Una cadena es una secuencia de reglas que se evalúan en orden. Las cadenas pueden ser:</p>
 <ul>
-<li>Las tablas ARP de ambos dispositivos se actualizan durante el proceso.</li>
-<li>Los switches actualizan sus tablas MAC al recibir tramas con nuevas direcciones.</li>
-<li>El enrutador <strong>no participa</strong>, ya que es una comunicación local (misma subred).</li>
+<li><strong>Cadenas estándar:</strong> Cadenas predefinidas como <code>INPUT</code>, <code>OUTPUT</code> y <code>FORWARD</code>.</li>
+<li><strong>Cadenas personalizadas:</strong> Cadenas creadas por el usuario.</li>
 </ul>
+<h2 id="targets"><strong>Targets</strong><a class="headerlink" href="#targets" title="Permanent link">&para;</a></h2>
+<p>Un target es la acción que se tomará con un paquete que cumpla una regla. Los targets pueden ser:</p>
+<ul>
+<li><code>ACCEPT</code>: Permite el tráfico.</li>
+<li><code>DROP</code>: Rechaza el tráfico sin notificar al remitente.</li>
+<li><code>REJECT</code>: Rechaza el tráfico y envía un mensaje de rechazo al remitente.</li>
+</ul>
+<h2 id="comandos"><strong>Comandos</strong><a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
+<p>A continuación se presentan algunos comandos básicos para trabajar con iptables:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iptables -A</code></td>
+<td>Agrega una regla a una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -D</code></td>
+<td>Borra una regla de una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -R</code></td>
+<td>Reemplaza una regla en una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -I</code></td>
+<td>Inserta una regla en una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -L</code></td>
+<td>Muestra las reglas de una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -F</code></td>
+<td>Borra todas las reglas de una cadena.</td>
+</tr>
+<tr>
+<td><code>iptables -Z</code></td>
+<td>Pone en cero los contadores de una cadena.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="targets-especificos"><strong>Targets Específicos</strong><a class="headerlink" href="#targets-especificos" title="Permanent link">&para;</a></h2>
+<p>A continuación se presentan algunos targets específicos:</p>
+<ul>
+<li><code>MASQUERADE</code>: Oculta la dirección IP del sistema y muestra la dirección IP de la interfaz por la que se está enviando el tráfico.</li>
+<li><code>MARK</code>: Asigna una marca a un paquete para identificarlo en la red.</li>
+</ul>
+<h2 id="cadenas-mangle"><strong>Cadenas Mangle</strong><a class="headerlink" href="#cadenas-mangle" title="Permanent link">&para;</a></h2>
+<p>La cadena <code>MANGLE</code> permite realizar operaciones avanzadas en los paquetes, como:</p>
+<ul>
+<li>Cambiar la dirección IP o el puerto de un paquete.</li>
+<li>Redirigir el tráfico entre interfaces o direcciones IP.</li>
+</ul>
+<h2 id="netfilter"><strong>Netfilter</strong><a class="headerlink" href="#netfilter" title="Permanent link">&para;</a></h2>
+<p>Netfilter es el kernel de iptables. Permite controlar y filtrar el tráfico de red en función de criterios específicos.</p>
+<p>Puedes utilizar los pdfs adjuntos como referencia para profundizar en cada uno de estos temas.</p>
+<p>Recuerda que este es un resumen básico y puedes encontrar más información en la documentación oficial de iptables.</p>
+<h2 id="ejercicio-de-oposiciones-seguridad-informatica-configuracion-basica-con-iptables"><strong>Ejercicio de Oposiciones - Seguridad Informática: Configuración Básica con iptables</strong><a class="headerlink" href="#ejercicio-de-oposiciones-seguridad-informatica-configuracion-basica-con-iptables" title="Permanent link">&para;</a></h2>
+<p><strong>Enunciado:</strong></p>
+<p>Un servidor web de una pequeña empresa, con dirección IP privada <code>192.168.1.100</code> y conectado a Internet a través de una interfaz <code>eth0</code> con dirección IP pública dinámica, necesita las siguientes reglas de firewall configuradas mediante <code>iptables</code>:</p>
+<ol>
+<li>Permitir el acceso al servidor web (puertos TCP 80 y 443) desde cualquier dirección IP externa.</li>
+<li>Permitir el acceso al servidor mediante SSH (puerto TCP 22) únicamente desde la red interna <code>192.168.1.0/24</code>.</li>
+<li>Denegar todo otro tráfico entrante por defecto.</li>
+<li>Permitir todo el tráfico saliente originado desde el servidor.</li>
+<li>Configurar masquerading para que el servidor pueda acceder a Internet a través de su interfaz <code>eth0</code>.</li>
+</ol>
+<p>Escribe los comandos <code>iptables</code> necesarios para implementar estas reglas. Asume que la política por defecto para la cadena <code>INPUT</code> es <code>DROP</code> y para la cadena <code>FORWARD</code> es <code>DROP</code>.</p>
+<p><strong>Solución:</strong></p>
+<p>A continuación, se presentan los comandos <code>iptables</code> para configurar el firewall según los requerimientos:</p>
+<ol>
+<li>
+<p><strong>Permitir acceso web (TCP 80 y 443) desde cualquier origen:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">80</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">443</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
+<ul>
+<li><code>-A INPUT</code>: Añade una regla al final de la cadena <code>INPUT</code> (tráfico entrante).</li>
+<li><code>-i eth0</code>: Especifica que la regla se aplica al tráfico que entra por la interfaz <code>eth0</code>.</li>
+<li><code>-p tcp</code>: Indica que la regla se aplica al protocolo TCP.</li>
+<li><code>--dport 80</code>: Especifica el puerto de destino 80 (HTTP).</li>
+<li><code>--dport 443</code>: Especifica el puerto de destino 443 (HTTPS).</li>
+<li><code>-j ACCEPT</code>: Indica que el tráfico que coincida con esta regla será aceptado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Permitir acceso SSH (TCP 22) solo desde la red interna:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">22</span><span class="w"> </span>-s<span class="w"> </span><span class="m">192</span>.168.1.0/24<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
+<ul>
+<li><code>-s 192.168.1.0/24</code>: Especifica que la regla solo se aplica al tráfico originado desde la red <code>192.168.1.0/24</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Denegar todo otro tráfico entrante por defecto (asumido en la política por defecto):</strong></p>
+<p>No se necesita un comando explícito aquí, ya que se asume que la política por defecto de la cadena <code>INPUT</code> es <code>DROP</code>. Cualquier tráfico entrante que no coincida con las reglas anteriores será descartado.</p>
+</li>
+<li>
+<p><strong>Permitir todo el tráfico saliente originado desde el servidor:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>OUTPUT<span class="w"> </span>-o<span class="w"> </span>eth0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+<span class="linenos" data-linenos="2 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>OUTPUT<span class="w"> </span>-o<span class="w"> </span>lo<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
+<ul>
+<li><code>-A OUTPUT</code>: Añade una regla al final de la cadena <code>OUTPUT</code> (tráfico saliente).</li>
+<li><code>-o eth0</code>: Especifica que la regla se aplica al tráfico que sale por la interfaz <code>eth0</code>.</li>
+<li><code>-o lo</code>: Especifica que la regla se aplica al tráfico que sale por la interfaz de loopback. Es importante permitir el tráfico local.</li>
+<li><code>-j ACCEPT</code>: Indica que el tráfico que coincida con esta regla será aceptado.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configurar masquerading para acceso a Internet:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-A<span class="w"> </span>POSTROUTING<span class="w"> </span>-o<span class="w"> </span>eth0<span class="w"> </span>-j<span class="w"> </span>MASQUERADE
+</code></pre></div>
+<ul>
+<li><code>-t nat</code>: Especifica que la regla se añade a la tabla <code>nat</code> (Network Address Translation).</li>
+<li><code>-A POSTROUTING</code>: Añade una regla al final de la cadena <code>POSTROUTING</code>, que se aplica después de que se ha decidido la ruta del paquete.</li>
+<li><code>-o eth0</code>: Especifica la interfaz de salida hacia Internet.</li>
+<li><code>-j MASQUERADE</code>: Realiza la traducción de direcciones, utilizando la dirección IP de la interfaz de salida (<code>eth0</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Nota:</strong></p>
+<ul>
+<li>Estos comandos deben ejecutarse con privilegios de superusuario (generalmente con <code>sudo</code>).</li>
+<li>Esta configuración no es persistente a través de reinicios. Para guardar las reglas de forma permanente, se deben utilizar herramientas específicas de la distribución Linux (por ejemplo, <code>iptables-save</code> y <code>iptables-restore</code> en Debian/Ubuntu, o <code>firewalld</code> o <code>nftables</code> en sistemas más recientes).</li>
+<li>Es importante entender el orden de las reglas en <code>iptables</code>. Las reglas se evalúan secuencialmente, y la primera regla que coincida con el tráfico determinará la acción a tomar.</li>
+</ul>
+<p>Este ejercicio aborda conceptos fundamentales de <code>iptables</code> como la manipulación de cadenas (<code>INPUT</code>, <code>OUTPUT</code>, <code>POSTROUTING</code>), el uso de interfaces (<code>eth0</code>, <code>lo</code>), protocolos (<code>tcp</code>), puertos (<code>80</code>, <code>443</code>, <code>22</code>), direcciones IP y redes (<code>192.168.1.0/24</code>), y el uso de targets (<code>ACCEPT</code>, <code>MASQUERADE</code>).</p>
 
 
 
